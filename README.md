@@ -266,7 +266,7 @@ http://localhost:8000
 
 | Multilingual Support (Hindi) | RAG Terminal — Live Distance Scores |
 |---|---|
-| ![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433 | ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) |
+| ![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) | ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) |
 
 ---
 
