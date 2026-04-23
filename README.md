@@ -102,6 +102,10 @@ The retrieval pipeline is built entirely from scratch. Manual chunking strategie
 No LangChain. No LlamaIndex. Just clean, auditable Python.
 ```
 
+**Live retrieval in action** — terminal output showing real-time vector distance scores and threshold-based filtering during a query:
+
+![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433)
+
 ### 📄 Document Intelligence
 Upload a PDF, image, or scanned document. The system extracts text (via PyMuPDF + Tesseract OCR), chunks it, embeds it, and immediately makes it queryable. Your uploaded documents become part of the knowledge base.
 
@@ -123,6 +127,8 @@ Each conversation retains history. AI-generated titles label your sessions. Mult
 
 ### 🌍 Multilingual
 Switch languages mid-conversation. Designed for India's linguistically diverse user base.
+
+![Multilingual Chat — Hindi](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2)
 
 ### 🔐 Authentication
 | Method | Provider |
@@ -253,10 +259,13 @@ http://localhost:8000
 
 ## Screenshots
 
-| Chat Interface | Authentication | Document Upload |
+| Chat Interface | Document Upload | Voice Mode |
 |---|---|---|
-| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | <img width="1917" height="912" alt="Screenshot 2026-04-23 212554" src="https://github.com/user-attachments/assets/14050b97-3c98-4014-9873-d60dd8d30da8" /> | <img width="1918" height="907" alt="Screenshot 2026-04-23 212801" src="https://github.com/user-attachments/assets/4563ba8a-d628-4d4e-bd03-42c717d82b77" />
- |
+| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | ![UI 2](https://github.com/user-attachments/assets/bf4a2af9-c4ca-46a5-8fcb-aa6a69d99936) | ![UI 3](https://github.com/user-attachments/assets/e6493a85-cfc0-4585-8e54-6b2e4a40210a) |
+
+| Multilingual Support (Hindi) | RAG Terminal — Live Distance Scores |
+|---|---|
+| ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) | ![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) |
 
 ---
 
