@@ -253,9 +253,10 @@ http://localhost:8000
 
 ## Screenshots
 
-| Chat Interface | Document Upload | Voice Mode |
+| Chat Interface | Authentication | Document Upload |
 |---|---|---|
-| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | ![UI 2](https://github.com/user-attachments/assets/bf4a2af9-c4ca-46a5-8fcb-aa6a69d99936) | ![UI 3](https://github.com/user-attachments/assets/e6493a85-cfc0-4585-8e54-6b2e4a40210a) |
+| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | <img width="1917" height="912" alt="Screenshot 2026-04-23 212554" src="https://github.com/user-attachments/assets/14050b97-3c98-4014-9873-d60dd8d30da8" /> | <img width="1918" height="907" alt="Screenshot 2026-04-23 212801" src="https://github.com/user-attachments/assets/4563ba8a-d628-4d4e-bd03-42c717d82b77" />
+ |
 
 ---
 
