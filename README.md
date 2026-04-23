@@ -104,7 +104,7 @@ No LangChain. No LlamaIndex. Just clean, auditable Python.
 
 **Live retrieval in action** — terminal output showing real-time vector distance scores and threshold-based filtering during a query:
 
-![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433)
+![Multilingual Chat — Hindi](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2)
 
 ### 📄 Document Intelligence
 Upload a PDF, image, or scanned document. The system extracts text (via PyMuPDF + Tesseract OCR), chunks it, embeds it, and immediately makes it queryable. Your uploaded documents become part of the knowledge base.
@@ -128,7 +128,8 @@ Each conversation retains history. AI-generated titles label your sessions. Mult
 ### 🌍 Multilingual
 Switch languages mid-conversation. Designed for India's linguistically diverse user base.
 
-![Multilingual Chat — Hindi](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2)
+![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433)
+
 
 ### 🔐 Authentication
 | Method | Provider |
@@ -265,7 +266,7 @@ http://localhost:8000
 
 | Multilingual Support (Hindi) | RAG Terminal — Live Distance Scores |
 |---|---|
-| ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) | ![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) |
+| ![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433 | ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) |
 
 ---
 
