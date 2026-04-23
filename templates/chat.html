@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/chat.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="chat-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- NEW CHAT BUTTON -->
+    <button id="new-chat-btn" class="new-chat-btn">
+        <i class="fa-solid fa-plus"></i> New Chat
+    </button>
+     <!-- 🔎 SEARCH BAR -->
+    <div class="history-search">
+        <input type="text" id="history-search-input" placeholder="Search chats...">
+        <button id="clear-search-btn" class="clear-btn hidden">
+        <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+        <div class="sidebar-header">
+            <h2>💬 Chat History</h2>
+        </div>
+        <ul id="chat-history">
+<!-- History items will be loaded here -->
+        </ul>
+        <div class="sidebar-footer">
+            <button id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Chat Area -->
+    <div class="chat-main">
+        <div class="chat-header">
+            <h2>FinSavvy Assistant</h2>
+            <div class="lang-container">
+                <button id="lang-toggle" class="lang-btn">E</button>
+
+                <div id="lang-menu" class="lang-menu hidden">
+                    <div data-lang="English" data-symbol="E">English</div>
+                    <div data-lang="Hindi" data-symbol="अ">Hindi</div>
+                    <div data-lang="Marathi" data-symbol="म">Marathi</div>
+                    <div data-lang="Kannada" data-symbol="ಕ">Kannada</div>
+                    <div data-lang="Urdu" data-symbol="ا">Urdu</div>
+                    <div data-lang="Bengali" data-symbol="ব">Bengali</div>
+                    <div data-lang="Odia" data-symbol="ଓ">Odia</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            {% for sender, message in chat_history %}
+        <div class="message {{ 'user-message' if sender == 'user' else 'bot-message' }}">
+            {% if sender == 'bot' %}
+                {{ message | safe }}
+            {% else %}
+                {{ message }}
+            {% endif %}
+        </div>
+             {% endfor %}
+            <!-- Messages appear here -->
+        </div>
+
+        <div class="chat-input">
+             <div class="plus-menu">
+        <button id="plus-btn"><i class="fa-solid fa-plus"></i></button>
+        <div id="upload-menu" class="hidden">
+            <label for="upload-image">📷 Upload Image</label>
+            <input type="file" id="upload-image" accept="image/*" multiple hidden>
+
+            <label for="upload-pdf">📄 Upload PDF</label>
+            <input type="file" id="upload-pdf" accept="application/pdf" multiple hidden>
+        </div>
+    </div>  
+            <div id="file-preview-container" class="file-preview-container"></div>
+            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
+            <button id="dictate-btn" class="icon-btn mic-btn" title="Voice input">
+                <i class="fa-solid fa-microphone"></i>
+            </button>
+
+            <button id="send-btn" class="icon-btn send-btn" title="Send">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        
+        </div>
+    </div>
+
+</div>
+<script>
+    const SESSION_ID = "{{ session_id }}";
+    const USERNAME = "{{ username }}";
+    const CHAT_HISTORY = {{ chat_history | tojson }};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="{{ url_for('static', path='js/chat.js') }}"></script>
+</body>
+</html>

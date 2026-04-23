@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get instant expert financial advice from AI trained by chartered accountants. Upload documents, extract data, and get professional guidance 24/7 at 90% less cost.">
+    <title>FinSavvy AI - Your Personal CA Available 24/7</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/index.css') }}">
+<style>
+    /* Override default colors with exact logo-inspired palette */
+    :root {
+        /* Exact logo colors */
+        --color-cream-light: #F5E6D3;
+        --color-cream: #E8D5B7;
+        --color-bronze: #CD853F;
+        --color-bronze-dark: #A0522D;
+        --color-brown: #8B4513;
+        --color-brown-deep: #654321;
+        --color-black: #000000;
+        
+        /* Updated theme colors matching logo */
+        --color-primary: #8B4513;
+        --color-primary-dark: #654321;
+        --color-accent: #CD853F;
+        --color-surface: #F5E6D3;
+        --color-background: #FDFAF5;
+        --color-text: #000000;
+        --color-text-secondary: #8B4513;
+        --color-text-tertiary: #654321;
+    }
+    
+    /* Typography using logo colors */
+    body {
+        color: var(--color-brown);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--color-black);
+    }
+    
+    /* Glass morphism for cards and components with logo tones */
+    .glass-card {
+        background: rgba(245, 230, 211, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(232, 213, 183, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.1);
+    }
+    
+    .glass-button {
+        background: rgba(139, 69, 19, 0.8);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(205, 133, 63, 0.3);
+    }
+    
+    .glass-button:hover {
+        background: rgba(139, 69, 19, 0.95);
+        box-shadow: 0 8px 24px rgba(139, 69, 19, 0.3);
+    }
+    
+    /* Update existing button styles with logo gradient */
+    .btn-primary {
+        background: linear-gradient(135deg, #654321 0%, #8B4513 50%, #CD853F 100%);
+        color: white;
+        border: none;
+        font-weight: 600;
+    }
+    
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #654321 0%, #8B4513 100%);
+        box-shadow: 0 8px 24px rgba(139, 69, 19, 0.3);
+    }
+    
+    .btn-secondary {
+        background: rgba(245, 230, 211, 0.9);
+        color: #8B4513;
+        border: 2px solid #CD853F;
+        backdrop-filter: blur(8px);
+        font-weight: 600;
+    }
+    
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 1);
+        border-color: #8B4513;
+        color: #654321;
+    }
+    
+    /* Card styles with glass effect using logo colors */
+    .card {
+        background: rgba(245, 230, 211, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(232, 213, 183, 0.3);
+    }
+    
+    .card-hover {
+        background: rgba(245, 230, 211, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(232, 213, 183, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 12px 40px rgba(139, 69, 19, 0.15);
+        transform: translateY(-4px);
+    }
+    
+    /* Testimonial cards with warm tones */
+    .testimonial-card {
+        background: rgba(245, 230, 211, 0.8);
+        backdrop-filter: blur(12px);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(232, 213, 183, 0.4);
+        box-shadow: 0 8px 32px rgba(139, 69, 19, 0.08);
+    }
+    
+    /* Progress bars matching logo gradient */
+    .progress-bar {
+        background: rgba(232, 213, 183, 0.3);
+        border-radius: 9999px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #CD853F 100%);
+        height: 100%;
+        transition: width 0.3s ease;
+    }
+    
+    /* Badges with logo colors */
+    .badge-primary {
+        background: rgba(139, 69, 19, 0.1);
+        color: #8B4513;
+        border: 1px solid rgba(139, 69, 19, 0.2);
+        font-weight: 600;
+    }
+    
+    .badge-success {
+        background: rgba(34, 197, 94, 0.1);
+        color: #059669;
+        border: 1px solid rgba(34, 197, 94, 0.2);
+        font-weight: 600;
+    }
+    
+    /* Text gradient matching exact logo progression */
+    .text-gradient {
+        background: linear-gradient(135deg, #654321 0%, #8B4513 30%, #CD853F 60%, #E8D5B7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Input fields with glass effect and logo tones */
+    .input {
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid rgba(232, 213, 183, 0.4);
+        backdrop-filter: blur(8px);
+        color: #000000;
+    }
+    
+    .input:focus {
+        border-color: #CD853F;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+    }
+    
+    .input::placeholder {
+        color: #A0522D;
+    }
+    
+    /* Upload zone with logo colors */
+    .upload-zone {
+        border: 2px dashed rgba(139, 69, 19, 0.4);
+        background: rgba(245, 230, 211, 0.5);
+        backdrop-filter: blur(8px);
+        border-radius: 1rem;
+        padding: 3rem 2rem;
+        transition: all 0.3s ease;
+    }
+    
+    .upload-zone:hover {
+        border-color: #CD853F;
+        background: rgba(245, 230, 211, 0.7);
+    }
+    
+    /* Section backgrounds with warm gradient */
+    .section {
+        background: linear-gradient(180deg, rgba(253, 250, 245, 1) 0%, rgba(245, 230, 211, 0.3) 100%);
+    }
+    
+    /* Navigation with logo colors */
+    nav a {
+        color: #8B4513;
+        font-weight: 500;
+    }
+    
+    nav a:hover {
+        color: #CD853F;
+    }
+    
+    /* Countdown digits */
+    .countdown-digit {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #654321;
+    }
+    
+    .countdown-label {
+        color: #8B4513;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    
+    /* Update background patterns to use logo colors */
+    .bg-pattern-warm {
+        background-image: linear-gradient(135deg, rgba(245, 230, 211, 0.1) 0%, rgba(232, 213, 183, 0.1) 100%);
+    }
+    
+    /* Footer styles */
+    footer h4 {
+        color: #F5E6D3;
+    }
+    
+    footer a {
+        color: rgba(245, 230, 211, 0.7);
+    }
+    
+    footer a:hover {
+        color: #F5E6D3;
+    }
+    
+    /* Success/Error colors adjusted to complement logo */
+    .text-success {
+        color: #059669;
+    }
+    
+    .text-error {
+        color: #dc2626;
+    }
+    
+    .text-warning {
+        color: #d97706;
+    }
+    
+    /* Accent colors in various components */
+    .text-accent {
+        color: #CD853F;
+    }
+    
+    .bg-accent {
+        background-color: #CD853F;
+    }
+    
+    .bg-accent-50 {
+        background-color: rgba(245, 230, 211, 0.5);
+    }
+    
+    .bg-accent-100 {
+        background-color: rgba(232, 213, 183, 0.3);
+    }
+    
+    .text-primary {
+        color: #8B4513;
+    }
+    
+    .bg-primary {
+        background-color: #8B4513;
+    }
+    
+    .bg-primary-50 {
+        background-color: rgba(245, 230, 211, 0.2);
+    }
+    
+    .bg-primary-100 {
+        background-color: rgba(232, 213, 183, 0.2);
+    }
+    
+    /* Border colors */
+    .border-border {
+        border-color: rgba(232, 213, 183, 0.3);
+    }
+    
+    .border-accent {
+        border-color: #CD853F;
+    }
+    
+    .border-primary {
+        border-color: #8B4513;
+    }
+    
+    /* Focus states */
+    .focus-ring:focus {
+        outline: 2px solid #CD853F;
+        outline-offset: 2px;
+    }
+    
+    /* Shadow utilities matching logo warm tones */
+    .shadow-hover {
+        box-shadow: 0 10px 40px rgba(139, 69, 19, 0.12);
+    }
+    
+    .shadow-cta {
+        box-shadow: 0 8px 24px rgba(139, 69, 19, 0.25);
+    }
+</style>
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ffinsavvya8321back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="antialiased">
+    
+<!-- Navigation Header    to change the blur of nav bar use this and change the 4px to more or less to remove tint change the background -->
+<header class="fixed top-0 left-0 right-0 z-50" style="backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); background: rgba(245, 230, 211, 0.75); border-bottom: 1px solid rgba(205, 133, 63, 0.2);">
+    <nav class="container-custom">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="landing_page.html" class="flex items-center space-x-3 focus-ring rounded-lg">
+                <img src="../static/images/finsavvy-bg.jpg" alt="FinSavvy AI Logo" class="h-12 w-auto rounded-lg">
+                <span class="text-2xl font-headline font-bold bg-gradient-to-r from-[#8B4513] to-[#CD853F] bg-clip-text text-transparent">FinSavvy AI</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-[#8B4513] hover:text-[#CD853F] transition-colors duration-base focus-ring rounded px-2 py-1">Features</a>
+                <a href="#demo" class="text-[#8B4513] hover:text-[#CD853F] transition-colors duration-base focus-ring rounded px-2 py-1">Demo</a>
+                <a href="#pricing" class="text-[#8B4513] hover:text-[#CD853F] transition-colors duration-base focus-ring rounded px-2 py-1">Pricing</a>
+                <a href="#faq" class="text-[#8B4513] hover:text-[#CD853F] transition-colors duration-base focus-ring rounded px-2 py-1">FAQ</a>
+                <button class="px-6 py-2 bg-gradient-to-r from-[#8B4513] to-[#CD853F] text-white rounded-lg hover:shadow-lg transition-all duration-base focus-ring" onclick="window.location.href='/login'">Log in </button>
+            </div>
+            
+        </div>
+        
+       
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden" style="background: linear-gradient(135deg, #FDFAF5 0%, #F5E6D3 50%, #E8D5B7 100%);">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8B4513" stroke-width="1"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)"/>
+        </svg>
+    </div>
+    
+    <div class="container-custom relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Content -->
+            <div class="animate-fade-in-up">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full mb-6" style="background: rgba(205, 133, 63, 0.15);">
+                    <svg class="w-5 h-5 text-bronze" style="color: #CD853F;" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    <span class="font-semibold text-sm" style="color: #8B4513;">Trusted by 10,000+ businesses</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-headline font-bold mb-6 leading-tight" style="color: #000000;">
+                    Your Personal CA is Now Available <span class="text-gradient">24/7</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl mb-8 leading-relaxed" style="color: #654321;">
+                    Get instant expert financial advice from AI trained by chartered accountants - analyze documents, extract data, answer complex questions at <span class="font-bold" style="color: #CD853F;">90% less cost</span>
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <button class="btn-primary text-lg px-8 py-4 focus-ring" onclick="window.location.href='/login'">
+                        Register Now
+                        <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </button>
+                    <button class="btn-secondary text-lg px-8 py-4 focus-ring" onclick="scrollToDemo()">
+                        <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                        </svg>
+                        Upload Document Demo
+                    </button>
+                </div>
+                
+                <!-- Trust Metrics -->
+                <div class="grid grid-cols-3 gap-6 pt-8" style="border-top: 1px solid rgba(232, 213, 183, 0.3);">
+                    <div>
+                        <div class="countdown-digit" id="docs-processed">8,547</div>
+                        <div class="countdown-label">Documents Today</div>
+                    </div>
+                    <div>
+                        <div class="countdown-digit text-success">< 30s</div>
+                        <div class="countdown-label">Avg Response</div>
+                    </div>
+                    <div>
+                        <div class="countdown-digit">95%</div>
+                        <div class="countdown-label">Accuracy Rate</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="relative animate-fade-in">
+                <div class="card-hover p-8" style="background: rgba(245, 230, 211, 0.7);">
+                    <img src="../static/images/finsavvy-bg.jpg" 
+                         alt="Professional chartered accountant reviewing financial documents with AI assistance on laptop" 
+                         class="w-full h-auto rounded-lg shadow-hover"
+                         onerror="this.src='https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+                    
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-6 -left-6 rounded-xl shadow-hover p-6 animate-scale-in" style="animation-delay: 300ms; background: rgba(245, 230, 211, 0.95);">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: rgba(5, 150, 105, 0.1);">
+                                <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-bold text-2xl" style="color: #8B4513;">₹12,450</div>
+                                <div class="text-sm" style="color: #654321;">Saved This Month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Problem Agitation Section -->
+    <section class="section bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">
+                    Traditional CA Services Are <span class="text-error">Costing You</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Small businesses waste thousands on expensive consultations and wait days for simple answers
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Problem Side -->
+                <div class="card bg-error-50 border-2 border-error-200">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-error rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-headline font-bold text-error-700">Traditional CA Problems</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-error flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-error-700 mb-1">Expensive Hourly Rates</div>
+                                <div class="text-text-secondary">₹200-500 per hour for basic consultations</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-error flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-error-700 mb-1">Slow Response Times</div>
+                                <div class="text-text-secondary">Wait 2-5 days for document reviews and answers</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-error flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-error-700 mb-1">Document Complexity</div>
+                                <div class="text-text-secondary">Manual data entry and organization nightmares</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-error flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-error-700 mb-1">Limited Availability</div>
+                                <div class="text-text-secondary">Only during business hours, no weekend support</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cost Calculator -->
+                    <div class="mt-8 p-6 bg-surface rounded-lg border-2 border-error">
+                        <div class="text-center">
+                            <div class="text-sm text-text-secondary mb-2">Annual CA Costs</div>
+                            <div class="text-4xl font-mono font-bold text-error mb-2">₹18,000+</div>
+                            <div class="text-xs text-text-tertiary">Based on 3 hours/month @ ₹500/hr</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution Side -->
+                <div class="card bg-success-50 border-2 border-success-200">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-success rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-headline font-bold text-success-700">FinSavvy AI Solution</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-success-700 mb-1">Affordable Flat Rate</div>
+                                <div class="text-text-secondary">Unlimited queries for ₹99/month - 90% savings</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-success-700 mb-1">Instant Responses</div>
+                                <div class="text-text-secondary">Get answers in under 30 seconds, any time</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-success-700 mb-1">Automated Data Extraction</div>
+                                <div class="text-text-secondary">AI extracts and organizes data from any document</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-success flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-success-700 mb-1">24/7 Availability</div>
+                                <div class="text-text-secondary">Access expert advice anytime, anywhere</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Savings Calculator -->
+                    <div class="mt-8 p-6 bg-surface rounded-lg border-2 border-success">
+                        <div class="text-center">
+                            <div class="text-sm text-text-secondary mb-2">Your Annual Savings</div>
+                            <div class="text-4xl font-mono font-bold text-success mb-2">₹16,812</div>
+                            <div class="text-xs text-text-tertiary">Save 93% vs traditional CA services</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="section bg-gradient-to-br from-accent-50 to-primary-50">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">
+                    See FinSavvy AI in <span class="text-gradient">Action</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Upload a sample document and watch our AI extract data, analyze insights, and provide expert recommendations in seconds
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="card-hover bg-surface p-8 md:p-12">
+                    <!-- Document Type Selector -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-semibold text-text-secondary mb-4">Select Document Type</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <button class="doc-type-btn active p-4 rounded-lg border-2 border-accent bg-accent-50 transition-all duration-base focus-ring" data-type="invoice">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                <div class="font-semibold text-sm">Invoice</div>
+                            </button>
+                            <button class="doc-type-btn p-4 rounded-lg border-2 border-border hover:border-accent transition-all duration-base focus-ring" data-type="tax">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                                <div class="font-semibold text-sm">Tax Return</div>
+                            </button>
+                            <button class="doc-type-btn p-4 rounded-lg border-2 border-border hover:border-accent transition-all duration-base focus-ring" data-type="statement">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                                <div class="font-semibold text-sm">Financial Statement</div>
+                            </button>
+                            <button class="doc-type-btn p-4 rounded-lg border-2 border-border hover:border-accent transition-all duration-base focus-ring" data-type="receipt">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                                <div class="font-semibold text-sm">Receipt</div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Upload Zone -->
+                    <div id="upload-zone" class="upload-zone text-center cursor-pointer mb-8">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                        </svg>
+                        <h3 class="text-xl font-headline font-semibold text-primary mb-2">Drop your document here</h3>
+                        <p class="text-text-secondary mb-4">or click to browse (PDF, JPG, PNG up to 10MB)</p>
+                        <button class="btn-outline focus-ring">Choose File</button>
+                    </div>
+                    
+                    <!-- Processing Animation (Hidden by default) -->
+                    <div id="processing-animation" class="hidden mb-8">
+                        <div class="flex items-center justify-center space-x-3 mb-4">
+                            <div class="w-3 h-3 bg-accent rounded-full animate-bounce" style="animation-delay: 0ms;"></div>
+                            <div class="w-3 h-3 bg-accent rounded-full animate-bounce" style="animation-delay: 150ms;"></div>
+                            <div class="w-3 h-3 bg-accent rounded-full animate-bounce" style="animation-delay: 300ms;"></div>
+                        </div>
+                        <p class="text-center text-text-secondary">Analyzing document with AI...</p>
+                        <div class="progress-bar mt-4">
+                            <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Display (Hidden by default) -->
+                    <div id="demo-results" class="hidden">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <!-- Extracted Data -->
+                            <div class="card bg-primary-50">
+                                <h4 class="font-headline font-semibold text-lg text-primary mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Extracted Data
+                                </h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-text-secondary">Invoice Number:</span>
+                                        <span class="font-mono font-semibold">#INV-2025-0847</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-text-secondary">Date:</span>
+                                        <span class="font-mono font-semibold">12/15/2025</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-text-secondary">Total Amount:</span>
+                                        <span class="font-mono font-semibold text-accent">₹4,250.00</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-text-secondary">Tax Amount:</span>
+                                        <span class="font-mono font-semibold">₹382.50</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-text-secondary">Vendor:</span>
+                                        <span class="font-semibold">Tech Solutions Inc.</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-primary-200">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">Confidence Score:</span>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="progress-bar w-24 h-2">
+                                                <div class="progress-fill bg-success" style="width: 97%"></div>
+                                            </div>
+                                            <span class="font-mono font-semibold text-success">97%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- AI Insights -->
+                            <div class="card bg-accent-50">
+                                <h4 class="font-headline font-semibold text-lg text-primary mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    AI Insights
+                                </h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-2">
+                                        <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <p class="text-sm text-text-secondary">Invoice is within normal range for this vendor</p>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <svg class="w-5 h-5 text-warning flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <p class="text-sm text-text-secondary">Payment due in 15 days - consider early payment discount</p>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <p class="text-sm text-text-secondary">Tax calculation verified - eligible for business expense deduction</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Expert Recommendations -->
+                        <div class="card bg-success-50 border-2 border-success-200">
+                            <h4 class="font-headline font-semibold text-lg text-success-700 mb-4 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                Expert CA Recommendations
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <span class="flex-shrink-0 w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-sm font-bold">1</span>
+                                    <p class="text-text-secondary">Schedule payment for 12/28/2025 to take advantage of 2% early payment discount (₹85 savings)</p>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="flex-shrink-0 w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-sm font-bold">2</span>
+                                    <p class="text-text-secondary">Categorize as "Professional Services" expense for accurate tax reporting</p>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="flex-shrink-0 w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-sm font-bold">3</span>
+                                    <p class="text-text-secondary">Request itemized breakdown for expenses over ₹4,000 for better audit trail</p>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <button class="btn-primary focus-ring" onclick="">
+                                Try It With Your Documents
+                                <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section id="features" class="section bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">
+                    Everything You Need for <span class="text-gradient">Financial Success</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Powerful AI capabilities trained by certified chartered accountants to handle all your financial needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="card-hover text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-headline font-semibold text-primary mb-3">Smart Document Upload</h3>
+                    <p class="text-text-secondary mb-4">Upload images, PDFs, or scanned documents. Our AI processes any financial document format instantly.</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="badge badge-primary">PDF</span>
+                        <span class="badge badge-primary">JPG</span>
+                        <span class="badge badge-primary">PNG</span>
+                        <span class="badge badge-primary">Scans</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="card-hover text-center">
+                    <div class="w-16 h-16 bg-success-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-headline font-semibold text-primary mb-3">Instant Data Extraction</h3>
+                    <p class="text-text-secondary mb-4">AI automatically extracts amounts, dates, vendors, and tax information with 95%+ accuracy.</p>
+                    <div class="mt-4 pt-4 border-t border-border">
+                        <div class="flex items-center justify-center space-x-2">
+                            <span class="text-sm text-text-secondary">Accuracy:</span>
+                            <div class="progress-bar w-24 h-2">
+                                <div class="progress-fill bg-success" style="width: 95%"></div>
+                            </div>
+                            <span class="font-mono font-semibold text-success">95%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="card-hover text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-headline font-semibold text-primary mb-3">Expert Financial Advice</h3>
+                    <p class="text-text-secondary mb-4">Get CA-level insights on tax planning, deductions, compliance, and financial optimization strategies.</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="badge badge-success">Tax Planning</span>
+                        <span class="badge badge-success">Compliance</span>
+                        <span class="badge badge-success">Optimization</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="card-hover text-center">
+                    <div class="w-16 h-16 bg-warning-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-headline font-semibold text-primary mb-3">Massive Cost Savings</h3>
+                    <p class="text-text-secondary mb-4">Save upto 99% compared to traditional CA services. Unlimited queries for one flat monthly rate.</p>
+                    <div class="mt-4 pt-4 border-t border-border">
+                        <div class="text-center">
+                            <div class="text-3xl font-mono font-bold text-warning mb-1">₹16,812</div>
+                            <div class="text-sm text-text-secondary">Average Annual Savings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Benefits -->
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-headline font-semibold text-lg text-primary mb-2">24/7 Availability</h4>
+                        <p class="text-text-secondary">Get instant answers anytime, anywhere. No waiting for business hours or appointments.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-headline font-semibold text-lg text-primary mb-2">Bank-Level Security</h4>
+                        <p class="text-text-secondary">Your financial data is encrypted with military-grade security. SOC 2 Type II certified.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-headline font-semibold text-lg text-primary mb-2">CA-Trained AI</h4>
+                        <p class="text-text-secondary">Our AI is trained by certified chartered accountants with decades of experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="section bg-gradient-to-br from-primary-50 to-accent-50">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">
+                    Trusted by <span class="text-gradient">10,000+ Businesses</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    See how FinSavvy AI is helping small businesses save money and make better financial decisions
+                </p>
+            </div>
+            
+            <!-- Success Metrics -->
+            <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <div class="card text-center">
+                    <div class="text-4xl md:text-5xl font-mono font-bold text-accent mb-2">10,000+</div>
+                    <div class="text-text-secondary">Documents Processed</div>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl md:text-5xl font-mono font-bold text-success mb-2">95%</div>
+                    <div class="text-text-secondary">User Satisfaction</div>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl md:text-5xl font-mono font-bold text-primary mb-2">< 30s</div>
+                    <div class="text-text-secondary">Average Response</div>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl md:text-5xl font-mono font-bold text-warning mb-2">₹16K+</div>
+                    <div class="text-text-secondary">Avg Annual Savings</div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13545f06d-1765109213545.png" 
+                             alt="Omraj Pawar, small business owner smiling in his retail store" 
+                             class="w-12 h-12 rounded-full object-cover mr-4"
+                             onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop'; this.onerror=null;">
+                        <div>
+                            <div class="font-semibold text-primary">Omraj Pawar</div>
+                            <div class="text-sm text-text-secondary">Retail Store Owner</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary mb-4">"FinSavvy AI saved me ₹14,000 in the first year alone. The document processing is incredibly accurate and the tax advice has been invaluable for my business."</p>
+                    <div class="pt-4 border-t border-border">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Annual Savings:</span>
+                            <span class="font-mono font-bold text-success">₹14,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16c1293ce-1764637736694.png" 
+                             alt="Soham Shelar, freelance consultant working on laptop" 
+                             class="w-12 h-12 rounded-full object-cover mr-4"
+                             onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop'; this.onerror=null;">
+                        <div>
+                            <div class="font-semibold text-primary">Soham Shelar</div>
+                            <div class="text-sm text-text-secondary">Freelance Consultant</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary mb-4">"As a freelancer, I used to dread tax season. FinSavvy AI makes it effortless. I just upload my receipts and invoices, and it handles everything. Game changer!"</p>
+                    <div class="pt-4 border-t border-border">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Time Saved:</span>
+                            <span class="font-mono font-bold text-accent">15 hrs/month</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1593566b8-1765720923306.png" 
+                             alt="Parth Gadre, startup founder in modern office" 
+                             class="w-12 h-12 rounded-full object-cover mr-4"
+                             onerror="this.src='https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+                        <div>
+                            <div class="font-semibold text-primary">Parth Gadre</div>
+                            <div class="text-sm text-text-secondary">Startup Founder</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary mb-4">"The accuracy is impressive. FinSavvy AI caught several deductions my previous accountant missed. It's like having a CA on my team 24/7 without the hefty retainer."</p>
+                    <div class="pt-4 border-t border-border">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-text-secondary">Extra Deductions:</span>
+                            <span class="font-mono font-bold text-success">₹8,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="mt-16 pt-12 border-t border-border">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-headline font-semibold text-primary mb-2">Trusted & Certified</h3>
+                    <p class="text-text-secondary">Bank-level security and compliance you can trust</p>
+                </div>
+                <div class="flex flex-wrap justify-center items-center gap-12">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-12 h-12 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <div>
+                            <div class="font-semibold text-primary">SOC 2 Type II</div>
+                            <div class="text-sm text-text-secondary">Certified</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-12 h-12 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <div>
+                            <div class="font-semibold text-primary">256-bit SSL</div>
+                            <div class="text-sm text-text-secondary">Encryption</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-12 h-12 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <div>
+                            <div class="font-semibold text-primary">GDPR</div>
+                            <div class="text-sm text-text-secondary">Compliant</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-12 h-12 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                        </svg>
+                        <div>
+                            <div class="font-semibold text-primary">CA Trained</div>
+                            <div class="text-sm text-text-secondary">By Experts</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section bg-surface">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">
+                    Simple, <span class="text-gradient">Transparent Pricing</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Save 99% compared to traditional CA services. No hidden fees, no surprises.
+                </p>
+            </div>
+            
+            <!-- Pricing Comparison -->
+            <div class="max-w-6xl mx-auto mb-16">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Traditional CA -->
+                    <div class="card border-2 border-error-200">
+                        <div class="text-center mb-6">
+                            <div class="inline-flex items-center space-x-2 bg-error-100 text-error-700 px-4 py-2 rounded-full mb-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="font-semibold">Traditional CA</span>
+                            </div>
+                            <div class="text-5xl font-mono font-bold text-error mb-2">₹500</div>
+                            <div class="text-text-secondary">per hour</div>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-error flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary">Limited availability (business hours only)</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-error flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary">2-5 day response time</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-error flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary">Manual document processing</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-error flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary">Additional fees for consultations</span>
+                            </li>
+                        </ul>
+                        <div class="pt-6 border-t border-border text-center">
+                            <div class="text-2xl font-mono font-bold text-error mb-1">₹18,000+</div>
+                            <div class="text-sm text-text-secondary">Estimated annual cost</div>
+                        </div>
+                    </div>
+                    
+                    <!-- FinSavvy AI -->
+                    <div class="card border-2 border-accent shadow-hover relative">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-accent text-white px-6 py-2 rounded-full font-semibold text-sm shadow-cta">
+                                BEST VALUE
+                            </span>
+                        </div>
+                        <div class="text-center mb-6 mt-4">
+                            <div class="inline-flex items-center space-x-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full mb-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="font-semibold">FinSavvy AI</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2 mb-2">
+                                <span class="text-2xl font-mono line-through text-text-tertiary">₹199</span>
+                                <span class="text-5xl font-mono font-bold text-accent">₹0</span>
+                            </div>
+                            <div class="text-text-secondary mb-2">per month</div>
+                            <div class="inline-flex items-center space-x-2 bg-warning-100 text-warning-700 px-3 py-1 rounded-full text-sm">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary"><strong>24/7 availability</strong> - Get answers anytime</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary"><strong>Instant responses</strong> in under 30 seconds</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary"><strong>Unlimited document uploads</strong> and processing</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary"><strong>Unlimited queries</strong> - Ask anything</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary"><strong>AI-powered insights</strong> and recommendations</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-text-secondary"><strong>Bank-level security</strong> and encryption</span>
+                            </li>
+                        </ul>
+                        <div class="pt-6 border-t border-border text-center mb-6">
+                            <div class="text-2xl font-mono font-bold text-success mb-1">₹1,188</div>
+                            <div class="text-sm text-text-secondary mb-3">Annual cost (save ₹16,812)</div>
+                            <div class="inline-flex items-center space-x-2 bg-success-100 text-success-700 px-4 py-2 rounded-full">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="font-semibold">93% Savings</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary w-full text-lg py-4 focus-ring" onclick="window.location.href='/login'">
+                            Register Now
+                            <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </button>
+                        <p class="text-center text-sm text-text-secondary mt-4">
+                            <svg class="inline-block w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            30-day money-back guarantee • Cancel anytime
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ROI Calculator -->
+            <div class="max-w-4xl mx-auto card bg-gradient-to-br from-accent-50 to-primary-50 border-2 border-accent-200">
+                <h3 class="text-2xl font-headline font-bold text-primary mb-6 text-center">Calculate Your Savings</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-sm font-semibold text-text-secondary mb-2">Current Monthly CA Expenses</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-secondary">₹</span>
+                            <input type="number" id="ca-expenses" value="1500" class="input pl-8" placeholder="1500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-text-secondary mb-2">Documents Processed Monthly</label>
+                        <input type="number" id="doc-count" value="50" class="input" placeholder="50">
+                    </div>
+                </div>
+                <div class="mt-8 p-6 bg-surface rounded-lg border-2 border-success">
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-sm text-text-secondary mb-2">Monthly Savings</div>
+                            <div class="text-3xl font-mono font-bold text-success" id="monthly-savings">₹1,401</div>
+                        </div>
+                        <div>
+                            <div class="text-sm text-text-secondary mb-2">Annual Savings</div>
+                            <div class="text-3xl font-mono font-bold text-success" id="annual-savings">₹16,812</div>
+                        </div>
+                        <div>
+                            <div class="text-sm text-text-secondary mb-2">ROI</div>
+                            <div class="text-3xl font-mono font-bold text-success" id="roi-percentage">1,417%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section bg-gradient-to-br from-primary-50 to-surface">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">
+                    Frequently Asked <span class="text-gradient">Questions</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Everything you need to know about FinSavvy AI
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="card-hover">
+                    <button class="faq-question w-full text-left flex items-center justify-between focus-ring rounded-lg p-6" onclick="toggleFAQ(this)">
+                        <span class="font-headline font-semibold text-lg text-primary pr-8">How accurate is the AI compared to a real chartered accountant?</span>
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 transform transition-transform duration-base" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-text-secondary leading-relaxed mb-4">
+                            FinSavvy AI maintains a 95%+ accuracy rate, validated against certified chartered accountants. Our AI is trained on millions of financial documents and continuously updated with the latest tax laws and regulations. For complex scenarios requiring human judgment, we recommend consulting with a licensed CA, but for routine document processing, data extraction, and standard financial advice, our AI matches professional-level accuracy.
+                        </p>
+                        <div class="flex items-center space-x-2 text-sm text-success">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold">Verified by certified CAs with 95%+ accuracy rate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="card-hover">
+                    <button class="faq-question w-full text-left flex items-center justify-between focus-ring rounded-lg p-6" onclick="toggleFAQ(this)">
+                        <span class="font-headline font-semibold text-lg text-primary pr-8">Is my financial data secure?</span>
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 transform transition-transform duration-base" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-text-secondary leading-relaxed mb-4">
+                            Absolutely. We use bank-level 256-bit SSL encryption for all data transmission and storage. Our infrastructure is SOC 2 Type II certified and GDPR compliant. Your documents are encrypted at rest and in transit, and we never share your data with third parties. All processing happens on secure servers with multiple layers of protection. You maintain full control and can delete your data at any time.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                            <div class="flex items-center space-x-2 text-sm">
+                                <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>256-bit SSL</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm">
+                                <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>SOC 2 Type II</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm">
+                                <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>GDPR Compliant</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm">
+                                <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Encrypted Storage</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="card-hover">
+                    <button class="faq-question w-full text-left flex items-center justify-between focus-ring rounded-lg p-6" onclick="toggleFAQ(this)">
+                        <span class="font-headline font-semibold text-lg text-primary pr-8">What types of documents can I upload?</span>
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 transform transition-transform duration-base" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-text-secondary leading-relaxed mb-4">
+                            FinSavvy AI processes all common financial document formats including invoices, receipts, tax returns, financial statements, bank statements, expense reports, contracts, and more. We support PDF, JPG, PNG, and scanned documents. Our AI can extract data from both digital and handwritten documents with high accuracy.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+                            <div class="badge badge-primary">Invoices</div>
+                            <div class="badge badge-primary">Receipts</div>
+                            <div class="badge badge-primary">Tax Returns</div>
+                            <div class="badge badge-primary">Bank Statements</div>
+                            <div class="badge badge-primary">Financial Statements</div>
+                            <div class="badge badge-primary">Expense Reports</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="card-hover">
+                    <button class="faq-question w-full text-left flex items-center justify-between focus-ring rounded-lg p-6" onclick="toggleFAQ(this)">
+                        <span class="font-headline font-semibold text-lg text-primary pr-8">Can I cancel my subscription anytime?</span>
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 transform transition-transform duration-base" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-text-secondary leading-relaxed mb-4">
+                            Yes, absolutely. You can cancel your subscription at any time with no penalties or hidden fees. If you cancel within the first 30 days, you'll receive a full refund under our money-back guarantee. After that, you'll have access until the end of your current billing period. We make cancellation simple - just one click in your account settings.
+                        </p>
+                        <div class="flex items-center space-x-2 text-sm text-success mt-4">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold">30-day money-back guarantee • No questions asked</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="card-hover">
+                    <button class="faq-question w-full text-left flex items-center justify-between focus-ring rounded-lg p-6" onclick="toggleFAQ(this)">
+                        <span class="font-headline font-semibold text-lg text-primary pr-8">How does the AI handle complex tax situations?</span>
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 transform transition-transform duration-base" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-text-secondary leading-relaxed mb-4">
+                            Our AI is trained on diverse tax scenarios including multi-state operations, international transactions, complex deductions, and various business structures. It stays updated with the latest tax law changes and can handle most common business tax situations. For highly complex scenarios (like international tax treaties or specialized industry regulations), the AI will flag these for human CA review and provide guidance on next steps.
+                        </p>
+                        <div class="flex items-center space-x-2 text-sm text-accent mt-4">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold">AI flags complex cases for human CA review when needed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 6 -->
+                <div class="card-hover">
+                    <button class="faq-question w-full text-left flex items-center justify-between focus-ring rounded-lg p-6" onclick="toggleFAQ(this)">
+                        <span class="font-headline font-semibold text-lg text-primary pr-8">Do you offer support if I have questions?</span>
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 transform transition-transform duration-base" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-text-secondary leading-relaxed mb-4">
+                            Yes! We offer 24/7 support through multiple channels. You can ask the AI directly for help with any feature or financial question. For technical issues or account questions, our human support team is available via live chat, email, and phone during business hours. We also have an extensive knowledge base with video tutorials and step-by-step guides.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm font-semibold">Live Chat</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm font-semibold">Email</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm font-semibold">Phone</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm font-semibold">Knowledge Base</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Final CTA Section -->
+<section id="trial" class="section relative overflow-hidden" style="background: linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #CD853F 70%, #8B4513 100%); padding-top: 5rem; padding-bottom: 5rem;">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="cta-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                    <circle cx="30" cy="30" r="2" fill="#654321"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#cta-grid)"/>
+        </svg>
+    </div>
+    
+    <div class="container-custom relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Urgency Timer -->
+            <div class="inline-flex items-center space-x-3 px-6 py-3 rounded-full mb-8 animate-fade-in" style="background: rgba(139, 69, 19, 0.15); border: 2px solid rgba(205, 133, 63, 0.3);">
+                <svg class="w-6 h-6" style="color: #8B4513;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span class="font-headline font-bold" style="color: #654321;">Limited Time Offer: 50% OFF for First 100 Users</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-headline font-bold mb-6 animate-fade-in-up" style="color: #654321;">
+                Join our  <span style="color: #CD853F;">Personalized NewsLetter-Trial</span> Today
+            </h2>
+            
+            <p class="text-xl md:text-2xl mb-8 animate-fade-in-up" style="animation-delay: 150ms; color: #8B4513;">
+                Join 10,000+ businesses saving thousands on CA fees. Get instant access to AI-powered financial expertise.
+            </p>
+            
+            <!-- Countdown Timer -->
+            <div class="flex justify-center space-x-6 mb-12 animate-fade-in-up" style="animation-delay: 300ms;">
+                <div class="text-center">
+                    <div class="countdown-digit" style="color: #654321;" id="hours">23</div>
+                    <div class="countdown-label" style="color: #8B4513;">Hours</div>
+                </div>
+                <div class="text-center">
+                    <div class="countdown-digit" style="color: #654321;" id="minutes">45</div>
+                    <div class="countdown-label" style="color: #8B4513;">Minutes</div>
+                </div>
+                <div class="text-center">
+                    <div class="countdown-digit" style="color: #654321;" id="seconds">32</div>
+                    <div class="countdown-label" style="color: #8B4513;">Seconds</div>
+                </div>
+            </div>
+            
+            <!-- Trial Form -->
+            <div class="max-w-2xl mx-auto card animate-scale-in" style="animation-delay: 450ms; background: rgba(253, 250, 245, 0.95); backdrop-filter: blur(10px);">
+                <form id="trial-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" style="color: #8B4513;">First Name *</label>
+                            <input type="text" required class="input" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" style="color: #8B4513;">Last Name *</label>
+                            <input type="text" required class="input" placeholder="Doe">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-2" style="color: #8B4513;">Email Address *</label>
+                        <input type="email" required class="input" placeholder="john@company.com">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-2" style="color: #8B4513;">Company Name</label>
+                        <input type="text" class="input" placeholder="Your Company Inc.">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-2" style="color: #8B4513;">Phone Number</label>
+                        <input type="tel" class="input" placeholder="+91 9999999923">
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" id="terms" required class="mt-1 w-5 h-5 text-accent border-border rounded focus:ring-2 focus:ring-accent">
+                        <label for="terms" class="text-sm" style="color: #654321;">
+                            I agree to the <a href="javascript:void(0)" class="hover:underline" style="color: #CD853F;">Terms of Service</a> and <a href="javascript:void(0)" class="hover:underline" style="color: #CD853F;">Privacy Policy</a>. I understand I can cancel anytime within 30 days for a full refund.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary w-full text-xl py-5 focus-ring">
+                        Start Free 30-Day Trial
+                        <svg class="inline-block w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="flex items-center justify-center space-x-6 text-sm" style="color: #654321;">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>No credit card required</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Cancel anytime</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>30-day guarantee</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="mt-12 pt-8" style="border-top: 1px solid rgba(139, 69, 19, 0.2);">
+                <p class="mb-6" style="color: #8B4513;">Trusted by leading businesses worldwide</p>
+                <div class="flex flex-wrap justify-center items-center gap-8" style="opacity: 0.7; color: #654321;">
+                    <div class="text-2xl font-headline font-bold">TechCorp</div>
+                    <div class="text-2xl font-headline font-bold">FinanceHub</div>
+                    <div class="text-2xl font-headline font-bold">StartupLab</div>
+                    <div class="text-2xl font-headline font-bold">BusinessPro</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-br from-[#654321] to-[#8B4513] text-white py-16">
+    <div class="container-custom">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <!-- Company Info -->
+            <div>
+                <div class="flex items-center space-x-3 mb-6">
+                    <img src="../static/images/finsavvy-bg.jpg" alt="FinSavvy AI Logo" class="h-10 w-auto rounded-lg">
+                    <span class="text-xl font-headline font-bold">FinSavvy AI</span>
+                </div>
+                <p class="text-white/70 mb-6">Your 24/7 AI-powered chartered accountant. Making professional financial guidance accessible to everyone.</p>
+                <div class="flex space-x-4">
+                    <a href="javascript:void(0)" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors duration-base focus-ring backdrop-blur-sm" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors duration-base focus-ring backdrop-blur-sm" aria-label="Twitter">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors duration-base focus-ring backdrop-blur-sm" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Product -->
+            <div>
+                <h4 class="font-headline font-semibold text-lg mb-6">Product</h4>
+                <ul class="space-y-3">
+                    <li><a href="#features" class="text-white/70 hover:text-white transition-colors duration-base">Features</a></li>
+                    <li><a href="#demo" class="text-white/70 hover:text-white transition-colors duration-base">Demo</a></li>
+                    <li><a href="#pricing" class="text-white/70 hover:text-white transition-colors duration-base">Pricing</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">API</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Integrations</a></li>
+                </ul>
+            </div>
+            
+            <!-- Company -->
+            <div>
+                <h4 class="font-headline font-semibold text-lg mb-6">Company</h4>
+                <ul class="space-y-3">
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">About Us</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Careers</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Blog</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Press Kit</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Support -->
+            <div>
+                <h4 class="font-headline font-semibold text-lg mb-6">Support</h4>
+                <ul class="space-y-3">
+                    <li><a href="#faq" class="text-white/70 hover:text-white transition-colors duration-base">FAQ</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Help Center</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Documentation</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Status</a></li>
+                    <li><a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="pt-8 border-t border-white/20">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-white/70 text-sm">&#xa9; 2026 FinSavvy AI. All Rights Reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Terms of Service</a>
+                    <a href="javascript:void(0)" class="text-white/70 hover:text-white transition-colors duration-base">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scroll Functions
+        function trial() {
+            document.getElementById('trial').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function scrollToDemo() {
+            document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Document Type Selection
+        const docTypeBtns = document.querySelectorAll('.doc-type-btn');
+        docTypeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                docTypeBtns.forEach(b => {
+                    b.classList.remove('active', 'border-accent', 'bg-accent-50');
+                    b.classList.add('border-border');
+                    b.querySelector('svg').classList.remove('text-accent');
+                    b.querySelector('svg').classList.add('text-text-secondary');
+                });
+                btn.classList.add('active', 'border-accent', 'bg-accent-50');
+                btn.classList.remove('border-border');
+                btn.querySelector('svg').classList.add('text-accent');
+                btn.querySelector('svg').classList.remove('text-text-secondary');
+            });
+        });
+        
+        // Upload Zone Interaction
+        const uploadZone = document.getElementById('upload-zone');
+        const processingAnimation = document.getElementById('processing-animation');
+        const demoResults = document.getElementById('demo-results');
+        
+        uploadZone.addEventListener('click', () => {
+            uploadZone.classList.add('hidden');
+            processingAnimation.classList.remove('hidden');
+            
+            // Simulate processing
+            let progress = 0;
+            const progressFill = document.getElementById('progress-fill');
+            const interval = setInterval(() => {
+                progress += 5;
+                progressFill.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        processingAnimation.classList.add('hidden');
+                        demoResults.classList.remove('hidden');
+                    }, 500);
+                }
+            }, 100);
+        });
+        
+        // ROI Calculator
+        const caExpensesInput = document.getElementById('ca-expenses');
+        const docCountInput = document.getElementById('doc-count');
+        
+        function calculateROI() {
+            const monthlyExpenses = parseFloat(caExpensesInput.value) || 1500;
+            const finsavvyCost = 99;
+            const monthlySavings = monthlyExpenses - finsavvyCost;
+            const annualSavings = monthlySavings * 12;
+            const roi = ((monthlySavings / finsavvyCost) * 100).toFixed(0);
+            
+            document.getElementById('monthly-savings').textContent = '₹' + monthlySavings.toLocaleString();
+            document.getElementById('annual-savings').textContent = '₹' + annualSavings.toLocaleString();
+            document.getElementById('roi-percentage').textContent = roi + '%';
+        }
+        
+        caExpensesInput.addEventListener('input', calculateROI);
+        docCountInput.addEventListener('input', calculateROI);
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Animated Counter for Trust Metrics
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+        
+        // Trigger counter animation when element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.textContent.replace(/,/g, ''));
+                    animateCounter(counter, target);
+                    observer.unobserve(counter);
+                }
+            });
+        });
+        
+        const docsProcessed = document.getElementById('docs-processed');
+        if (docsProcessed) {
+            observer.observe(docsProcessed);
+        }
+        
+        // Form Submission
+        const trialForm = document.getElementById('trial-form');
+        trialForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for signing up! Check your email for next steps.');
+            trialForm.reset();
+        });
+        
+        // Sticky Header on Scroll
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 8px rgba(27, 54, 93, 0.08)';
+            } else {
+                header.style.boxShadow = 'none';
+            }  
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
