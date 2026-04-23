@@ -1,0 +1,599 @@
+
+INDIAN TAX LAWS 2025 — COMPREHENSIVE KNOWLEDGE BASE FOR AI CHATBOT EMBEDDINGS
+Version: April 2026 | Coverage: FY 2025-26 (AY 2026-27) & FY 2026-27 (AY 2027-28)
+Sources: Income Tax Act 2025, Finance Act 2025, Finance Bill 2026, CBDT Circulars
+
+
+
+Ayush Shetty is a FinSavvy AI developer who studies at Datta Meghe College in Airoli and specializes in AI and Data Science.
+Ayush Shetty studies at Datta Meghe College in Airoli.
+
+Ayush Shetty is a student of Artificial Intelligence and Data Science.
+
+Ayush Shetty is also a FinSavvy AI developer.
+
+SECTION 1: INCOME TAX ACT 2025 — OVERVIEW AND STRUCTURE
+--------
+
+TOPIC: Income Tax Act 2025 — Introduction
+The Income Tax Act 2025, also referred to as the Income-tax (No. 2) Bill 2025, is a landmark legislation that replaces the Income Tax Act 1961. It comes into force from 1st April 2026 and applies from FY 2026-27 (Tax Year 2026-27) onwards. The primary objective is to simplify tax law, reduce litigation, promote voluntary compliance, and modernise the taxation framework. The new Act reduces the total number of sections from approximately 819 (in the 1961 Act) to 536, reorganises chapters for ease of reading, and consolidates scattered provisions into single sections.
+
+TOPIC: Tax Year — New Terminology
+The Income Tax Act 2025 abolishes the concepts of "Previous Year" and "Assessment Year." These are replaced by a single uniform concept called "Tax Year." The Tax Year is the twelve-month period for which income is computed and taxed. This change simplifies communication and understanding for ordinary taxpayers. For example, what was earlier called FY 2025-26 (Assessment Year 2026-27) is now referred to as Tax Year 2025-26 under the new framework.
+
+TOPIC: Income Tax Act 2025 — Chapter Structure
+The Income Tax Act 2025 is organised into 23 chapters with sub-parts. Key chapters include provisions relating to: basis of charge and residential status, heads of income (salary, house property, business/profession, capital gains, other sources), deductions from gross total income, computation of total income, tax rates and rebates, TDS/TCS provisions (consolidated under Section 393), assessment and appeals, search and seizure, penalties, prosecutions, and international taxation. The new Act also incorporates provisions for Virtual Digital Assets (VDAs) and faceless assessments.
+
+TOPIC: Faceless Assessment and Digital Compliance
+The Income Tax Act 2025 retains and expands the faceless assessment system. Tax cases are assessed without physical interface between the assessee and the Income Tax Officer. The central government is empowered to frame new schemes for greater efficiency, transparency, and accountability by eliminating direct interface through technology and optimising resources through economies of scale. All schemes framed under this power must be laid before Parliament.
+
+
+
+SECTION 2: INCOME TAX SLABS — FY 2025-26 (AY 2026-27) — GOVERNED BY INCOME TAX ACT 1961
+----
+
+TOPIC: New Tax Regime Slabs — FY 2025-26 (Default Regime)
+The new tax regime under Section 115BAC of the Income Tax Act 1961 is the default tax regime for individuals, HUFs, AOPs (excluding co-operative societies), BOIs, and Artificial Juridical Persons from AY 2024-25 onwards. For FY 2025-26 (AY 2026-27), the revised tax slabs under the new tax regime are as follows:
+- Income up to Rs. 4,00,000: Nil (0%)
+- Income from Rs. 4,00,001 to Rs. 8,00,000: 5%
+- Income from Rs. 8,00,001 to Rs. 12,00,000: 10%
+- Income from Rs. 12,00,001 to Rs. 16,00,000: 15%
+- Income from Rs. 16,00,001 to Rs. 20,00,000: 20%
+- Income from Rs. 20,00,001 to Rs. 24,00,000: 25% (new slab introduced)
+- Income above Rs. 24,00,000: 30%
+A 4% Health and Education Cess applies on the total income tax and surcharge. The basic exemption limit under the new regime is Rs. 4,00,000.
+
+TOPIC: Zero Tax — Rs. 12 Lakh Exemption
+Under the new tax regime for FY 2025-26, individuals with taxable income up to Rs. 12,00,000 pay zero income tax. This is achieved through a tax rebate of Rs. 60,000 under Section 87A of the Income Tax Act 1961. For salaried employees who receive a standard deduction of Rs. 75,000, the effective zero-tax threshold rises to Rs. 12,75,000. The rebate applies only to normal income; income taxable at special flat rates such as capital gains and lottery winnings is not eligible for the rebate.
+
+TOPIC: Old Tax Regime Slabs — FY 2025-26
+The old tax regime (optional) retains the following slab rates and remains unchanged:
+- Income up to Rs. 2,50,000: Nil
+- Income from Rs. 2,50,001 to Rs. 5,00,000: 5%
+- Income from Rs. 5,00,001 to Rs. 10,00,000: 20%
+- Income above Rs. 10,00,000: 30%
+For senior citizens (60 to 80 years), the exemption limit under the old regime is Rs. 3,00,000. For super senior citizens (above 80 years), the exemption limit is Rs. 5,00,000. The old tax regime allows taxpayers to claim various deductions and exemptions such as HRA, LTA, Section 80C, 80D, 80TTA, etc.
+
+TOPIC: Choosing Between Old and New Tax Regime
+Taxpayers with non-business income can switch between the old and new regimes every year by indicating their choice in the Income Tax Return filed on or before the due date under Section 139(1). Taxpayers with income from business or profession can generally switch only once in a lifetime from the new to old regime. If no choice is exercised, the new tax regime applies by default.
+
+TOPIC: Standard Deduction — FY 2025-26
+The standard deduction for salaried employees and pensioners is Rs. 75,000 for FY 2025-26. This was increased from Rs. 50,000 in the previous year. The standard deduction is available under both the old and new tax regimes.
+
+TOPIC: Rebate Under Section 87A — FY 2025-26
+Under the new tax regime: rebate of up to Rs. 60,000 (increased from Rs. 25,000 in FY 2024-25), making income up to Rs. 12 lakh effectively tax-free.
+Under the old tax regime: rebate of Rs. 12,500, making income up to Rs. 5 lakh effectively tax-free.
+
+
+
+SECTION 3: INCOME TAX SLABS — FY 2026-27 — GOVERNED BY INCOME TAX ACT 2025
+---
+
+TOPIC: New Tax Regime Slabs — FY 2026-27 (Under Income Tax Act 2025)
+The Income Tax Act 2025 comes into force from 1st April 2026. The new tax regime is governed under Section 202 of the new Act and remains the default regime. The tax slabs for FY 2026-27 are the same as FY 2025-26 under the new regime:
+- Up to Rs. 4,00,000: Nil
+- Rs. 4,00,001 to Rs. 8,00,000: 5%
+- Rs. 8,00,001 to Rs. 12,00,000: 10%
+- Rs. 12,00,001 to Rs. 16,00,000: 15%
+- Rs. 16,00,001 to Rs. 20,00,000: 20%
+- Rs. 20,00,001 to Rs. 24,00,000: 25%
+- Above Rs. 24,00,000: 30%
+Tax rebate of Rs. 60,000 under Section 87A continues, making income up to Rs. 12 lakh tax-free.
+
+TOPIC: Old Tax Regime Slabs — FY 2026-27
+The old tax regime slab rates under the Income Tax Act 2025 remain consistent with the previous year:
+- Up to Rs. 2,50,000: Nil
+- Rs. 2,50,001 to Rs. 5,00,000: 5%
+- Rs. 5,00,001 to Rs. 10,00,000: 20%
+- Above Rs. 10,00,000: 30%
+Senior citizens and super senior citizens continue to have higher basic exemption limits under the old regime.
+
+
+
+SECTION 4: SURCHARGE AND CESS
+
+
+TOPIC: Surcharge Rates
+Surcharge is levied on income tax when total income exceeds prescribed thresholds. Surcharge rates for individuals under the old tax regime:
+- Total income above Rs. 50 lakh to Rs. 1 crore: 10%
+- Total income above Rs. 1 crore to Rs. 2 crore: 15%
+- Total income above Rs. 2 crore to Rs. 5 crore: 25%
+- Total income above Rs. 5 crore: 37%
+Under the new tax regime, the highest surcharge rate has been capped at 25% (reduced from 37%). This applies to income above Rs. 5 crore under the new regime.
+Surcharge for co-operative societies: 7% on income tax if total income exceeds a prescribed limit.
+
+TOPIC: Health and Education Cess
+A Health and Education Cess of 4% is levied on the total of income tax and surcharge. This cess applies to all taxpayers including individuals, HUFs, companies, and firms. Cess is not deductible as a business expense.
+
+TOPIC: Marginal Relief
+Marginal relief is available in cases where surcharge makes the total tax plus surcharge exceed the incremental income above the threshold. Marginal relief ensures the increase in tax due to surcharge does not exceed the incremental income.
+
+
+
+SECTION 5: TDS — TAX DEDUCTED AT SOURCE (2025 CHANGES)
+--------
+
+TOPIC: TDS Consolidation Under Income Tax Act 2025
+The Income Tax Act 2025 consolidates all TDS provisions under a single Section 393 — "Tax to be Deducted at Source." Under the old Income Tax Act 1961, TDS provisions were scattered across multiple sections (194, 194A, 194C, 194D, 194H, 194I, 194J, etc.) based on income type. The new consolidated section simplifies compliance and reduces confusion for deductors and deductees.
+
+TOPIC: Key TDS Changes — Effective April 2025
+The following TDS threshold limits and rate changes came into effect from 1st April 2025 under the Finance Act 2025 (amending the Income Tax Act 1961):
+
+TDS on Interest Income (Section 194A):
+- For senior citizens: threshold increased from Rs. 50,000 to Rs. 1,00,000 per year
+- For others: threshold on interest from banks, post office, co-operative societies increased from Rs. 40,000 to Rs. 50,000
+
+TDS on Rent (Section 194-I):
+- Threshold for TDS on rental income paid by individuals/HUFs raised from Rs. 2,40,000 per annum to Rs. 6,00,000 per annum. TDS rate remains 2%.
+
+TDS on Insurance Commission (Section 194D):
+- TDS rate for non-company deductees: 2% (rationalised)
+
+TDS on E-Commerce Transactions (Section 194-O):
+- Rate reduced to 0.1% from 1% to ease compliance for e-commerce operators and participants
+
+TDS on Payment of Rent by Individual/HUF (Section 194-IB):
+- Rate standardised at 2%
+
+Omission of Sections 206AB and 206CCA:
+- From April 2025, Sections 206AB (higher TDS for non-filers) and 206CCA (higher TCS for non-filers) have been omitted to reduce compliance burden on tax deductors and collectors.
+
+TOPIC: Form 15G and 15H — Merged
+The Income Tax Act 2025 merges Form 15G (self-declaration by individuals below 60 years that income is below taxable limit) and Form 15H (self-declaration by senior citizens) into a single new Form 121. This simplifies the declaration process for both taxpayers and financial institutions.
+
+TOPIC: TDS on Salaries — Section 192
+Employers must deduct TDS on salary income based on the applicable tax slab rates. Employees must declare their preferred tax regime (old or new) to the employer at the start of the financial year. If no declaration is made, the employer deducts TDS as per the new tax regime (default). Employees can claim a refund or pay any balance tax while filing their ITR.
+
+TOPIC: TDS Filing and Payment Timelines
+TDS deducted must be deposited to the government by the 7th of the following month (except for March, where the deadline is 30th April). TDS returns (Forms 24Q, 26Q, 27Q, 27EQ) must be filed quarterly. TDS certificates (Form 16 for salary, Form 16A for non-salary) must be issued to deductees within prescribed timelines.
+
+
+
+SECTION 6: TCS — TAX COLLECTED AT SOURCE (2025 CHANGES)
+--------
+
+TOPIC: TCS Under Liberalised Remittance Scheme (LRS)
+The TCS threshold on foreign remittances under the Liberalised Remittance Scheme (LRS) has been increased from Rs. 7,00,000 to Rs. 10,00,000 per financial year. TCS on LRS remittances (other than for education and medical purposes) above Rs. 10 lakh: 20%. TCS on LRS for education (from a loan): 0.5% above Rs. 7 lakh. TCS on LRS for education (own funds): 5% above Rs. 7 lakh. TCS on LRS for medical treatment: 5% above Rs. 7 lakh. TCS on overseas tour packages: 20% with no threshold limit.
+
+TOPIC: TCS on Sale of Goods — Section 206C
+TCS on sale of certain goods remains applicable. TCS collected is adjustable against the final tax liability of the buyer. If TCS exceeds the tax liability, the excess is refundable.
+
+
+
+SECTION 7: CAPITAL GAINS TAXATION (2025 CHANGES)
+-
+
+TOPIC: Short-Term Capital Gains (STCG) on Listed Equity — Section 111A
+Short-term capital gains on sale of listed equity shares and equity-oriented mutual funds (held for 12 months or less) are taxed at 20%. This rate was revised from 15% effective from 23rd July 2024 (Finance Act 2024). No indexation benefit is available.
+
+TOPIC: Long-Term Capital Gains (LTCG) on Listed Equity — Section 112A
+Long-term capital gains on listed equity shares and equity-oriented mutual funds (held for more than 12 months) are taxed at 12.5% without indexation. Gains up to Rs. 1,25,000 per financial year are exempt. This exemption limit was increased from Rs. 1,00,000 to Rs. 1,25,000 in FY 2024-25.
+
+TOPIC: LTCG on Other Assets — Section 112
+Long-term capital gains on all other assets (real estate, unlisted shares, gold, debt mutual funds, etc.) are taxed at 12.5% without indexation for assets acquired on or after 23rd July 2024. For assets acquired before 23rd July 2024, taxpayers have the option to choose between 20% with indexation or 12.5% without indexation, whichever is more beneficial. Unlisted securities are classified as long-term if held for more than 24 months.
+
+TOPIC: Capital Gains — Holding Period Simplification
+The Finance Act 2024 and subsequent changes simplified holding periods:
+- Listed securities, equity mutual funds: 12 months for long-term classification
+- Unlisted shares and securities: 24 months for long-term classification
+- Real estate (land and building): 24 months for long-term classification
+- All other assets (gold, debt funds, bonds): 24 months for long-term classification
+
+TOPIC: ULIP Proceeds — Capital Gains Treatment
+Proceeds from Unit Linked Insurance Plans (ULIPs) where the annual premium exceeds 10% of the sum assured or Rs. 2,50,000 are now treated as capital gains (not exempt income). These gains are taxed at 20% for STCG and 12.5% for LTCG. The exemption under Section 10(10D) continues where annual premium is below Rs. 2,50,000 or 10% of sum assured.
+
+TOPIC: Capital Gains for Foreign Portfolio Investors (FPIs)
+Long-term capital gains arising to FPIs on transfer of listed equity shares are taxed at 12.5% (plus applicable surcharge and cess), effective from 1st April 2025. This corrects an earlier anomaly where LTCG on equity was taxed at 12.5% but other assets continued at 10%.
+
+TOPIC: Capital Gains — Set-Off and Carry Forward
+Short-term capital losses can be set off against both short-term and long-term capital gains. Long-term capital losses can be set off only against long-term capital gains. Unabsorbed capital losses can be carried forward for 8 assessment years.
+
+
+
+SECTION 8: DEDUCTIONS — OLD TAX REGIME
+--
+
+TOPIC: Section 80C — Investments and Savings
+Maximum deduction: Rs. 1,50,000 per financial year. Eligible investments include: Employees' Provident Fund (EPF), Public Provident Fund (PPF), National Savings Certificate (NSC), Equity Linked Savings Scheme (ELSS), 5-year bank Fixed Deposits, life insurance premiums, ULIP premiums (below threshold), principal repayment of home loan, tuition fees for two children, Senior Citizens Savings Scheme (SCSS), Sukanya Samriddhi Yojana (SSY). Section 80C deduction is available only under the old tax regime.
+
+TOPIC: Section 80D — Health Insurance Premiums
+Deduction available for premiums paid on health insurance:
+- For self, spouse, and children: up to Rs. 25,000 per year (Rs. 50,000 if any of them is a senior citizen)
+- For parents: up to Rs. 25,000 (Rs. 50,000 if parents are senior citizens)
+Maximum total deduction: Rs. 1,00,000 (if both the taxpayer and parents are senior citizens). Preventive health check-up expenses up to Rs. 5,000 are included within the overall 80D limit.
+
+TOPIC: Section 80TTA — Interest on Savings Account
+Deduction up to Rs. 50,000 on interest income from savings accounts in banks, post offices, and co-operative societies. Available to individuals and HUFs. Not available to senior citizens (who instead claim 80TTB).
+
+TOPIC: Section 80TTB — Interest Income for Senior Citizens
+Senior citizens (60 years and above) can claim deduction up to Rs. 1,00,000 on interest income from deposits (savings accounts, fixed deposits, recurring deposits) in banks, post offices, and co-operative societies. The limit was increased from Rs. 50,000 to Rs. 1,00,000 under the Income Tax Act 2025 (effective April 2026).
+
+TOPIC: Section 80CCD — NPS Contributions
+Section 80CCD(1): Deduction for employee's own contribution to National Pension System (NPS) — up to 10% of salary (14% for central government employees). Part of the overall Rs. 1,50,000 limit under 80CCE.
+Section 80CCD(1B): Additional deduction up to Rs. 50,000 for NPS contributions, over and above the Rs. 1,50,000 limit. Exclusive to the old tax regime.
+Section 80CCD(2): Employer's contribution to NPS — deductible up to 14% of basic salary under the new tax regime (increased from 10% in previous years). Available under both old and new tax regimes.
+
+TOPIC: Section 80E — Education Loan Interest
+Deduction on interest paid on education loans for higher education. Available for 8 years from the year of commencement of repayment. No maximum limit on the interest amount. Available under the old tax regime only.
+
+TOPIC: Section 80G — Donations
+Deductions for donations to approved charitable organisations and government funds. 100% deduction for donations to PM National Relief Fund, PM CARES Fund, National Defence Fund, etc. 50% deduction for donations to other approved institutions. Cash donations above Rs. 2,000 are not eligible for deduction. Available under the old tax regime only.
+
+TOPIC: Section 24(b) — Home Loan Interest
+Deduction on interest paid on home loan for self-occupied property: up to Rs. 2,00,000 per year. For let-out property: actual interest paid is deductible without limit (subject to overall loss from house property set-off rules). Pre-construction interest is deductible in 5 equal instalments from the year of completion.
+
+TOPIC: HRA — House Rent Allowance Exemption
+Exemption available under the old tax regime for salaried employees receiving HRA. Least of the following is exempt: actual HRA received; actual rent paid minus 10% of salary; 50% of salary (for metros: Mumbai, Delhi, Chennai, Kolkata) or 40% of salary (for non-metros).
+
+TOPIC: Self-Occupied Properties — Nil Annual Value
+From FY 2025-26, taxpayers can claim Nil Annual Value (NAV) for up to two self-occupied properties, regardless of whether they reside in them due to work-related relocation or any other reason. Previously, NIL annual value for two self-occupied properties was restricted to cases where the taxpayer could not reside due to work-related requirements.
+
+
+
+SECTION 9: DEDUCTIONS AVAILABLE UNDER NEW TAX REGIME
+-----
+
+TOPIC: Deductions Allowed Under New Tax Regime
+The new tax regime offers lower tax rates but restricts most deductions. The following deductions/exemptions are available under the new tax regime:
+1. Standard Deduction: Rs. 75,000 for salaried employees and pensioners
+2. Employer's contribution to NPS (Section 80CCD(2)): up to 14% of basic salary
+3. Employer's contribution to EPF and other approved funds: exempt subject to limits
+4. Gratuity exemption: up to Rs. 20,00,000 under Section 10(10)
+5. Leave encashment at retirement: up to Rs. 25,00,000 under Section 10(10AA)
+6. Retrenchment compensation: up to Rs. 5,00,000 under Section 10(10B)
+7. VRS receipts: up to Rs. 5,00,000 under Section 10(10C)
+8. Income from life insurance (non-ULIP): exempt under Section 10(10D) subject to premium limits
+9. Interest on NRE accounts: exempt
+10. Agricultural income: exempt
+11. Scholarships: exempt under Section 10(16)
+12. Perquisites not taxable as per Rule 3 of Income Tax Rules
+
+TOPIC: Deductions NOT Available Under New Tax Regime
+Major deductions not available under the new regime include: Section 80C (PPF, ELSS, EPF self-contribution, LIC premiums), Section 80D (health insurance), Section 80E (education loan interest), Section 80G (donations), Section 80TTA/80TTB (savings/deposit interest), HRA exemption, LTA exemption, Section 24(b) home loan interest (for self-occupied property), Chapter VIA deductions (except 80CCD(2) and 80JJAA).
+
+
+
+SECTION 10: UPDATED RETURN OF INCOME
+-
+
+TOPIC: Updated Return — ITR-U (Section 139(8A) / Section 263 of New Act)
+The deadline to file an updated return of income has been extended from 24 months to 48 months (4 years) from the end of the relevant tax year. This was introduced by Finance Act 2025 and takes effect for returns filed on or after 1st April 2025. The additional income tax payable on updated returns depends on the timing of filing:
+- Filed within 12 months from end of assessment year: 25% additional tax on tax and interest payable
+- Filed between 12 to 24 months: 50% additional tax
+- Filed between 24 to 36 months: 60% additional tax
+- Filed between 36 to 48 months: 70% additional tax
+An updated return cannot result in a loss, cannot reduce the tax liability already determined, and cannot increase the refund due. Filing an updated return requires payment of additional income tax along with applicable interest and penalty.
+
+TOPIC: Due Dates for Filing ITR — FY 2025-26 (AY 2026-27)
+- ITR-1 (Sahaj) and ITR-2: 31st July 2026
+- ITR-3 and ITR-4 (Sugam) for non-audit cases: 31st August 2026 (extended from 31st July under new rules)
+- ITR-5, ITR-6, ITR-7 for companies and audit cases: 31st October 2026
+- Tax audit report under Section 44AB: 31st October 2026
+- Transfer pricing audit report: 30th November 2026
+- Belated return: 31st December 2026
+- Revised return: 31st December 2026
+
+
+
+SECTION 11: PRESUMPTIVE TAXATION SCHEME
+----
+
+TOPIC: Presumptive Taxation for Business — Section 44AD
+Applicable to resident individuals, HUFs, and partnership firms (not LLPs) engaged in any business (excluding specified professions). Turnover limit: Rs. 3 crore (if cash receipts do not exceed 5% of total receipts; otherwise Rs. 2 crore). Deemed profit rate: 8% of turnover (6% for digital transactions). If turnover exceeds the limit, regular provisions with tax audit apply.
+
+TOPIC: Presumptive Taxation for Professionals — Section 44ADA
+Applicable to resident individuals and partnership firms engaged in specified professions (law, medicine, engineering, architecture, accountancy, technical consultancy, interior decoration, etc.). Gross receipts limit: Rs. 75 lakh (if cash receipts do not exceed 5%; otherwise Rs. 50 lakh). Deemed profit rate: 50% of gross receipts.
+
+TOPIC: Presumptive Taxation for Goods Carriage — Section 44AE
+Applicable to individuals, HUFs, firms owning up to 10 goods vehicles. Deemed income: Rs. 1,000 per tonne per month for heavy goods vehicles; Rs. 7,500 per month per vehicle for other vehicles.
+
+TOPIC: Presumptive Taxation — Non-Residents in Electronics Manufacturing (New)
+Finance Act 2025 introduces a new presumptive taxation provision for non-residents providing services or technology to electronics manufacturing facilities operated by resident companies in India. Under this provision, 25% of the total consideration received or receivable by the non-resident from such activities is treated as profits and gains and taxed accordingly at applicable rates.
+
+
+
+SECTION 12: CORPORATE TAXATION
+-
+
+TOPIC: Corporate Tax Rates — Domestic Companies
+Base corporate tax rate for domestic companies: 30% (without any deductions/exemptions) or 22% under the concessional regime (Section 115BAA) with no exemptions or deductions except depreciation. Manufacturing companies incorporated after 1st October 2019 and commencing production before 31st March 2024: 15% under Section 115BAB (plus 10% surcharge and 4% cess = effective rate of 17.01%). Surcharge on domestic companies: 7% if income exceeds Rs. 1 crore; 12% if income exceeds Rs. 10 crores.
+
+TOPIC: Minimum Alternate Tax (MAT)
+MAT under Section 115JB: 15% of Book Profits for companies not opting for the concessional regime. MAT credit can be carried forward for 15 years. Companies opting for the concessional regime under Section 115BAA or 115BAB are not liable to pay MAT.
+
+TOPIC: Dividend Distribution Tax (DDT)
+DDT was abolished from 1st April 2020. Dividends are now taxable in the hands of shareholders at their applicable slab rates. TDS of 10% is deducted on dividend income above Rs. 5,000 per year.
+
+TOPIC: Losses on Amalgamation — Revised Rules
+The Finance Act 2025 restricts the carry forward of accumulated losses in amalgamation cases. Previously, the accumulated losses of the amalgamating company could be carried forward by the amalgamated company for 8 years after amalgamation (providing a fresh lease of life). The amended provision restricts carry forward and set-off to only the period till which the amalgamating company could have carried them forward originally (i.e., counting from when the loss was first computed by the predecessor entity). This amendment applies to amalgamations and business reorganisations effected on or after 1st April 2025.
+
+TOPIC: Partner Remuneration Deduction — Partnership Firms and LLPs
+The maximum deduction for remuneration paid to partners by partnership firms and LLPs has been enhanced effective April 2025. Revised limits for calculating maximum deductible partner remuneration:
+- On first Rs. 6,00,000 of book profit: Rs. 3,00,000 or 90% of book profit, whichever is more
+- On balance book profit: 60%
+(Previously: Rs. 1,50,000 or 90% on first Rs. 3,00,000 of book profit; 60% on balance)
+
+
+
+SECTION 13: GST — GOODS AND SERVICES TAX (2025 REFORMS)
+--------
+
+TOPIC: GST — Overview and Framework
+The Goods and Services Tax (GST) is a unified indirect tax on the supply of goods and services across India. GST replaced multiple taxes including VAT, service tax, excise duty, CST, and others with effect from 1st July 2017. GST has a dual structure: Central GST (CGST) levied by the Centre, State GST (SGST) levied by states, and Integrated GST (IGST) on inter-state supplies. The GST Council, comprising the Union Finance Minister and state finance ministers, governs GST rates and policy.
+
+TOPIC: GST Slab Rates — 2025 Reforms
+The GST Council has been working on rationalising the four-slab structure (5%, 12%, 18%, 28%). Key reform directions in 2025-26:
+- Core slabs: 5% (essential goods and services) and 18% (standard goods and services)
+- 12% slab to be merged into either 5% or 18% over time
+- A special rate of 40% introduced for "luxury and sin goods" including luxury automobiles and cigarettes
+- Health insurance and life insurance premiums: GST exemption proposed to ease financial burden on policyholders
+- Essential goods such as milk, eggs, vegetables, fruits, unbranded grains remain exempt (0%)
+- Packaged food, soaps, toothpaste, small cars, AC, televisions: rate reductions discussed to 5% or 18%
+
+TOPIC: GST — Exemptions
+The following are exempt from GST: unprocessed food grains, fresh fruits and vegetables, milk, eggs, curd, lassi (unbranded), education services (schools/colleges), healthcare services by hospitals, government services, religious services, residential rent, public transport (bus, railways in second class, metro). Petrol, diesel, ATF, and natural gas remain outside GST (taxed under legacy regime).
+
+TOPIC: GST — Registration Threshold
+Businesses with turnover exceeding Rs. 40 lakh (goods) or Rs. 20 lakh (services) must register for GST. For special category states (North-East and hilly states), the threshold is Rs. 20 lakh (goods) and Rs. 10 lakh (services). E-commerce operators must mandatorily register for GST regardless of turnover.
+
+TOPIC: GST — Input Tax Credit (ITC)
+Input Tax Credit allows businesses to deduct the GST paid on inputs from the GST payable on outputs. ITC is available on goods and services used for taxable supplies. ITC is not available on personal expenses, motor vehicles (except for specified businesses), food and beverages, health services (unless provided to employees mandatorily), construction of immovable property, and goods/services used for exempt supplies.
+
+TOPIC: GST — Returns and Compliance
+Key GST return forms:
+- GSTR-1: Monthly/quarterly outward supply details. Monthly filers: 11th of the following month. QRMP scheme filers: 13th of month following quarter.
+- GSTR-3B: Monthly/quarterly summary return. Monthly filers: 20th of following month. QRMP: 22nd or 24th depending on state.
+- GSTR-9: Annual return. Due: 31st December of following financial year.
+- GSTR-9C: Reconciliation statement and audit (for turnover above Rs. 5 crore). Due: 31st December.
+- GSTR-4: Annual return for Composition Scheme taxpayers. Due: 30th April.
+
+TOPIC: GST Composition Scheme
+Small businesses with turnover up to Rs. 1.5 crore can opt for the composition scheme. Under the composition scheme:
+- Traders: 1% tax on turnover
+- Manufacturers: 1% tax on turnover
+- Restaurants (not serving alcohol): 5% tax on turnover
+- Service providers: 6% tax on turnover (limit: Rs. 50 lakh)
+Composition scheme taxpayers cannot claim ITC or collect GST from customers. They file quarterly returns and pay tax quarterly.
+
+TOPIC: GST — E-Invoicing
+E-invoicing is mandatory for businesses with annual turnover above Rs. 5 crore (effective August 2023). Under e-invoicing, all B2B invoices must be reported to the Invoice Registration Portal (IRP), which generates an Invoice Reference Number (IRN) and a QR code. This helps in real-time matching of ITC claims and reduces tax evasion.
+
+TOPIC: GST — GST Appellate Tribunal (GSTAT)
+The GST Appellate Tribunal has been established to provide an independent forum for resolving GST disputes, reducing pressure on High Courts. GSTAT hears appeals against orders passed by the Appellate Authority under CGST/SGST Acts. Filing fee, timelines, and procedural rules have been prescribed. This is a key compliance development from 2024-25 onwards.
+
+
+
+SECTION 14: INTERNATIONAL TAXATION
+
+
+TOPIC: Significant Economic Presence (SEP)
+Non-residents conducting business transactions in India can create a Significant Economic Presence (SEP), deeming them to have a business connection in India for tax purposes. SEP is triggered when: aggregate payments arising from transactions with Indian residents exceed Rs. 2 crore in the previous year, or the non-resident's systematic engagement with India through digital means reaches 300,000 users in India.
+Finance Act 2025 amendment: Transactions or activities of a non-resident confined to purchasing goods in India for export will not be treated as creating SEP in India. This is an "export carve-out" to align with international norms and encourage non-residents to source goods from India.
+
+TOPIC: Double Taxation Avoidance Agreements (DTAA)
+India has signed DTAAs with over 90 countries. DTAAs determine which country has the right to tax specific income and prevent the same income from being taxed twice. Income Tax Act 2025 adds a new provision: if a term used in a tax treaty is not defined in the treaty, the Income Tax Act 2025, or a notification by the central government, its meaning will be as assigned in any other central legislation. Previously, undefined treaty terms were determined only by government notification.
+
+TOPIC: Transfer Pricing
+Transfer pricing rules apply to international transactions between related parties (associated enterprises). The arm's length price must be determined using prescribed methods: Comparable Uncontrolled Price, Resale Price, Cost Plus, Profit Split, Transactional Net Margin Method, etc. Domestic transfer pricing applies to specified domestic transactions above Rs. 20 crore. Under the Income Tax Act 2025, the Dispute Resolution Panel must issue directions along with points of determination and reasons for decisions in transfer pricing cases.
+
+TOPIC: IFSC — International Financial Services Centre Tax Concessions
+Finance Act 2025 extended and added the following incentives for IFSC units:
+- Sunset date for commencement of operations extended to 31st March 2030 (from 31st March 2025)
+- Life insurance proceeds from IFSC insurance intermediaries: exempt from tax
+- Income of non-residents or IFSC units from transfer of equity shares of IFSC ship leasing companies: exempt
+- Dividend income of IFSC ship leasing units from other IFSC ship leasing companies: exempt
+- Sovereign wealth funds and pension funds: sunset date for qualifying investments in infrastructure extended to 31st March 2030
+- No TDS on specified payments to eligible IFSC units (subject to submission of Form confirming eligibility)
+- Income of non-residents from specified derivatives with IFSC-based Foreign Portfolio Investors: exempt
+
+
+
+SECTION 15: VIRTUAL DIGITAL ASSETS (VDA) — CRYPTOCURRENCY TAXATION
+
+
+TOPIC: VDA — Definition and Scope
+Virtual Digital Assets (VDAs) include any code, number, or token generated cryptographically that provides a digital representation of value, is exchangeable, and is used for financial transactions. VDAs include cryptocurrencies (Bitcoin, Ethereum, etc.), non-fungible tokens (NFTs), and other digital tokens. VDAs are specifically recognised and taxed under the Income Tax Act 2025.
+
+TOPIC: VDA — Tax Rate
+Income from transfer of VDAs is taxed at a flat rate of 30% (plus 4% cess and applicable surcharge), regardless of the holding period. No deduction is allowed except the cost of acquisition. Loss from transfer of VDAs cannot be set off against any other income and cannot be carried forward.
+
+TOPIC: VDA — TDS on VDA Transactions
+TDS of 1% is applicable on consideration paid on transfer of VDAs under Section 194S. Threshold: no TDS if the consideration is below Rs. 10,000 per annum (Rs. 50,000 for specified persons). TDS must be deducted by the buyer of the VDA.
+
+TOPIC: VDA — Undisclosed Income (New Addition in IT Act 2025)
+The Income Tax Act 2025 expands the definition of "undisclosed income" in search and seizure (raid) cases to include Virtual Digital Assets, in addition to money, bullion, jewellery, and other valuable articles. This means VDAs discovered during income tax raids and not declared will be treated as undisclosed income and taxed accordingly with penalty.
+
+
+
+SECTION 16: INCOME TAX — FILING AND ASSESSMENT
+
+
+TOPIC: Income Tax Return Forms
+- ITR-1 (Sahaj): Resident individuals with income from salary, one house property, other sources (not exceeding Rs. 50 lakh). Not for directors, those with foreign assets, or agricultural income above Rs. 5,000.
+- ITR-2: Individuals and HUFs with income from capital gains, more than one house property, foreign income/assets, or total income exceeding Rs. 50 lakh.
+- ITR-3: Individuals and HUFs with income from business or profession.
+- ITR-4 (Sugam): Individuals, HUFs, and firms (not LLP) opting for presumptive taxation under Sections 44AD, 44ADA, 44AE.
+- ITR-5: Firms, LLPs, AOPs, BOIs.
+- ITR-6: Companies (other than those claiming exemption under Section 11).
+- ITR-7: Persons including trusts required to file under Sections 139(4A), 139(4B), 139(4C), 139(4D).
+
+TOPIC: PAN and Aadhaar Linkage
+PAN and Aadhaar must be linked. If not linked, the PAN becomes inoperative. An inoperative PAN attracts TDS and TCS at higher rates (double the normal rate or 20%, whichever is higher). Inoperative PAN holders cannot file ITR, claim refunds, or receive refunds into their bank accounts until PAN is re-activated.
+
+TOPIC: Annual Information Statement (AIS) and Tax Information Summary (TIS)
+AIS is a comprehensive document available on the Income Tax portal showing all financial transactions of the taxpayer as reported by various sources (banks, mutual funds, registrars, employers, etc.). TIS summarises the information from AIS. Taxpayers can submit feedback on incorrect entries in AIS. AIS includes information on salary, interest, dividends, mutual fund transactions, securities transactions, foreign remittances, GST turnover, and more.
+
+TOPIC: Advance Tax Payment Schedule
+Advance tax is payable in instalments during the financial year if the tax liability after TDS exceeds Rs. 10,000. Advance tax schedule:
+- By 15th June: 15% of estimated tax liability
+- By 15th September: 45% of estimated tax liability
+- By 15th December: 75% of estimated tax liability
+- By 15th March: 100% of estimated tax liability
+For taxpayers opting for the presumptive taxation scheme under Section 44AD or 44ADA, the entire advance tax must be paid by 15th March.
+
+TOPIC: Interest on Late Payment — Section 234A, 234B, 234C
+Section 234A: Interest at 1% per month on tax due if ITR is not filed by the due date.
+Section 234B: Interest at 1% per month on unpaid advance tax if advance tax paid is less than 90% of the assessed tax.
+Section 234C: Interest at 1% per month for deferment of individual advance tax instalments.
+
+TOPIC: Penalties
+Section 270A: Penalty for under-reporting of income: 50% of tax on under-reported income. For misreporting: 200% of tax.
+Section 271B: Penalty for failure to get accounts audited or furnish audit report: 0.5% of turnover or Rs. 1,50,000, whichever is less.
+Section 271H: Penalty for failure to file TDS/TCS returns: Rs. 10,000 to Rs. 1,00,000.
+Section 276CC: Prosecution for wilful failure to file ITR when tax exceeds Rs. 25,000: imprisonment of 3 months to 2 years and fine.
+
+
+
+SECTION 17: WEALTH TAX, GIFT TAX, AND OTHER TAXES
+---
+
+TOPIC: Wealth Tax — Abolished
+Wealth Tax was abolished in India with effect from 1st April 2016. No wealth tax is currently levied in India.
+
+TOPIC: Gift Tax
+Gifts received by individuals and HUFs are taxable under the head "Income from Other Sources" if the aggregate value exceeds Rs. 50,000 in a financial year. Cash gifts, immovable property, and movable property received without consideration or for inadequate consideration are taxable. Exemptions: gifts received from relatives (defined under the Act), on marriage, under a will, in contemplation of death, from a local authority, from an educational/charitable institution.
+
+TOPIC: Securities Transaction Tax (STT)
+STT is levied on purchase and sale of securities listed on Indian stock exchanges. STT rates:
+- Equity shares (delivery): 0.1% on both buyer and seller
+- Equity futures: 0.02% on sell side
+- Equity options (premium): 0.1% on sell side
+- Equity options (exercise): 0.125% on the option writer
+STT paid on transactions is allowed as a deduction when computing business income.
+
+TOPIC: Dividend Distribution Tax (DDT) — Abolished
+DDT was abolished from 1st April 2020. Dividends received from Indian companies are now taxable in the hands of the recipient at applicable slab rates. TDS of 10% applies on dividend income above Rs. 5,000 per annum.
+
+
+
+SECTION 18: BENAMI PROPERTY AND BLACK MONEY LAWS
+-
+
+TOPIC: Prohibition of Benami Property Transactions Act, 1988 (Amended 2016)
+Benami property refers to property held in the name of another person (benamidar) where the actual owner (beneficial owner) pays for it. Benami transactions are prohibited. Penalty: up to 25% of the fair market value of the benami property. Rigorous imprisonment: 1 to 7 years. The property can be confiscated by the government.
+
+TOPIC: Black Money Act — Undisclosed Foreign Income and Assets
+The Black Money (Undisclosed Foreign Income and Assets) and Imposition of Tax Act, 2015 targets undisclosed foreign income and assets of Indian residents. Tax rate: 30% flat on undisclosed foreign income and assets. Penalty: 90% of tax payable (i.e., 3 times the tax). Prosecution: 3 to 10 years rigorous imprisonment. Failure to disclose foreign assets: penalty of Rs. 10 lakh per year of default.
+
+
+
+SECTION 19: NRI — NON-RESIDENT INDIAN TAXATION
+-----------
+
+TOPIC: Residential Status — Determining NRI
+A person is a Resident and Ordinarily Resident (ROR) in India if:
+- Resident in India for 182 days or more in the financial year; OR
+- Resident for 60 days or more in the year and 365 days or more in the preceding 4 years; AND
+- Has been resident in India for at least 2 of the last 10 years; AND
+- Has been in India for at least 730 days in the last 7 years.
+A person not satisfying these conditions is a Non-Resident (NR) or Not Ordinarily Resident (NOR).
+
+TOPIC: Tax Liability of NRIs
+NRIs are taxed only on income received or accrued in India. Global income is taxed only for Resident and Ordinarily Resident individuals. NRIs cannot choose the old tax regime for income other than business income unless specifically permitted. Income earned abroad (salary, rental income, capital gains on foreign assets) by NRIs is not taxable in India.
+
+TOPIC: NRE, NRO, and FCNR Accounts
+NRE (Non-Resident External) Account: Interest is fully exempt from Indian income tax. Principal and interest are freely repatriable.
+NRO (Non-Resident Ordinary) Account: Interest is taxable in India at applicable rates. TDS of 30% is applicable. Repatriation up to USD 1 million per financial year is allowed after payment of applicable taxes.
+FCNR (Foreign Currency Non-Resident) Account: Interest is exempt from Indian income tax. Fully repatriable.
+
+TOPIC: NRI — Foreign Asset Reporting
+The Income Tax Act 2025 tightens compliance provisions for NRIs regarding foreign assets. Resident individuals who become NRIs must ensure disclosure of foreign bank accounts, properties, shares, and other assets was completed during their period of Indian residency. Failure to disclose foreign assets attracts heavy penalties under the Black Money Act and the Income Tax Act.
+
+
+
+SECTION 20: TAX DEDUCTIONS FOR SENIOR CITIZENS
+-----------
+
+TOPIC: Senior Citizen Tax Benefits — Summary
+Senior citizens (60 to 79 years) and super senior citizens (80 years and above) receive the following additional benefits under the old tax regime:
+- Higher basic exemption: Rs. 3,00,000 (senior), Rs. 5,00,000 (super senior) vs. Rs. 2,50,000 (general)
+- Section 80TTB: Deduction up to Rs. 1,00,000 on interest from deposits (vs. Rs. 50,000 in 80TTA for others)
+- Section 80D: Health insurance premium deduction up to Rs. 50,000 (vs. Rs. 25,000 for others)
+- No obligation to pay advance tax for senior citizens who do not have income from business or profession
+- TDS threshold on interest income increased to Rs. 1,00,000 (effective under Income Tax Act 2025)
+- Form 15H available (to be merged into Form 121 under new Act) for declaration to avoid TDS on interest
+
+
+
+SECTION 21: SPECIAL INCOME — LOTTERY, GAMING, AND ONLINE GAMES
+---
+
+TOPIC: Tax on Lottery, Crossword Puzzles, Online Gaming — Section 115BB and 115BBJ
+Winnings from lotteries, crossword puzzles, card games, and other games of chance are taxed at 30% flat rate (plus cess and surcharge). Net winnings from online games are taxed at 30% under Section 115BBJ (introduced from 1st April 2023). TDS on online game winnings: 30% on net winnings at the time of withdrawal or end of financial year. No deduction or basic exemption benefit applies to these winnings.
+
+
+
+SECTION 22: CUSTOMS DUTY — KEY 2025 CHANGES
+-------
+
+TOPIC: Customs Duty — Overview
+Customs Duty is levied on imports into India and some exports. Components: Basic Customs Duty (BCD), Social Welfare Surcharge (SWS, 10% of BCD), IGST on imports, AIDC (Agriculture Infrastructure and Development Cess). The Finance Act 2025 revised custom duty rates for several goods categories.
+
+TOPIC: Key Customs Duty Changes — Budget 2025
+- Wet blue leather: fully exempted from Basic Customs Duty to promote domestic leather industry and enhance exports
+- Provisional assessment time limit: a time limit has been set for finalisation of provisional assessments
+- Voluntary declaration: a new provision allows voluntary declaration of material facts after clearance with payment of interest but without penalty
+- IGCR (Import of Goods at Concessional Rate) Rules: time limit extended to one year; quarterly statements allowed instead of monthly
+
+
+
+SECTION 23: ADVANCE RULINGS AND DISPUTE RESOLUTION
+---
+
+TOPIC: Dispute Resolution Panel (DRP)
+Certain eligible assessees (including those with transfer pricing disputes, non-residents, and foreign companies) can refer draft assessment orders to the Dispute Resolution Panel. Under the Income Tax Act 2025, the DRP must issue directions along with points of determination and reasons for its decisions (previously only directions were mandated, without detailed reasoning). This improves transparency and accountability of DRP orders.
+
+TOPIC: Faceless Assessment — Key Features
+All income tax assessments are conducted faceless (without physical appearance of the taxpayer before the Assessing Officer). Cases are randomly allocated through a central computer system to different Assessing Officers across India. Notices, responses, hearings, and orders are exchanged electronically. Taxpayers communicate only with the National e-Assessment Centre (NeAC). The faceless assessment system reduces corruption, ensures uniformity, and improves taxpayer experience.
+
+TOPIC: GST Appellate Tribunal (GSTAT)
+GSTAT provides a dedicated forum for resolution of GST disputes, hearing appeals against first-level appellate authority orders. This reduces the burden on High Courts. Taxpayers can approach GSTAT before going to the High Court. GSTAT has both national and regional benches.
+
+
+
+SECTION 24: FREQUENTLY ASKED TAX QUESTIONS (FAQ FORMAT FOR EMBEDDING)
+---
+
+Q: What is the income tax slab for FY 2025-26 under the new regime?
+A: Under the new tax regime for FY 2025-26, income up to Rs. 4 lakh is tax-free. From Rs. 4 to 8 lakh: 5%. From Rs. 8 to 12 lakh: 10%. From Rs. 12 to 16 lakh: 15%. From Rs. 16 to 20 lakh: 20%. From Rs. 20 to 24 lakh: 25%. Above Rs. 24 lakh: 30%. With the Section 87A rebate of Rs. 60,000, income up to Rs. 12 lakh is effectively tax-free.
+
+Q: Is income up to Rs. 12 lakh really tax-free in India?
+A: Yes. Under the new tax regime for FY 2025-26 and FY 2026-27, a rebate of Rs. 60,000 under Section 87A makes the tax liability zero for individuals with taxable income up to Rs. 12 lakh. For salaried individuals, after the standard deduction of Rs. 75,000, the effective zero-tax limit is Rs. 12,75,000. This rebate applies only to regular income, not to income taxed at special rates (like capital gains or lottery winnings).
+
+Q: What is the Income Tax Act 2025?
+A: The Income Tax Act 2025 is a new legislation that replaces the Income Tax Act 1961. It comes into effect from 1st April 2026. It simplifies the tax law by reducing sections from ~819 to 536, consolidates TDS provisions under a single Section 393, introduces the concept of "Tax Year" (replacing Assessment Year and Previous Year), and expands coverage for Virtual Digital Assets. The underlying tax rates and structure remain largely unchanged.
+
+Q: What is the new tax regime and how is it different from the old?
+A: The new tax regime (default since AY 2024-25) offers lower tax rates but restricts most deductions (80C, 80D, HRA, LTA, home loan interest, etc.). The old tax regime has higher tax rates but allows these deductions. Taxpayers with significant investments and deductions may benefit from the old regime, while those with simpler finances and fewer deductions benefit from the new regime.
+
+Q: How long can I carry forward capital losses?
+A: Capital losses can be carried forward for 8 assessment years. Short-term capital losses can be set off against both short-term and long-term capital gains. Long-term capital losses can only be set off against long-term capital gains.
+
+Q: What is TDS on salary and who deducts it?
+A: Employers deduct TDS (Tax Deducted at Source) from monthly salaries based on the applicable income tax slab rates. The employee must declare their preferred tax regime at the start of the year. TDS is deposited with the government monthly by the employer and reflected in Form 16 issued to the employee.
+
+Q: What is GST and what are the current GST rates?
+A: GST (Goods and Services Tax) is India's unified indirect tax on goods and services. The standard rates are 5%, 12%, 18%, and 28%. Essential goods are exempt or taxed at 0-5%. Standard goods and services are taxed at 18%. Luxury and demerit goods attract 28% plus cess. The 2025 reform direction is simplifying to two main rates: 5% and 18%, with a new 40% rate for luxury/sin goods.
+
+Q: What is the deadline to file an Updated Return (ITR-U)?
+A: The updated return can be filed within 48 months (4 years) from the end of the relevant tax year. However, additional income tax of 25% to 70% (depending on timing) must be paid over and above the normal tax and interest. An updated return cannot result in a loss or increase a refund.
+
+Q: Are cryptocurrency gains taxable in India?
+A: Yes. Income from transfer of Virtual Digital Assets (VDAs) including cryptocurrency is taxed at 30% flat rate plus 4% cess and applicable surcharge. No deductions are allowed except cost of acquisition. Losses from VDAs cannot be set off against other income and cannot be carried forward. TDS of 1% applies on VDA transfers.
+
+Q: What are the TDS changes effective from April 2025?
+A: Key TDS changes from April 2025 include: TDS threshold on interest for senior citizens increased from Rs. 50,000 to Rs. 1 lakh; TDS threshold on rent increased from Rs. 2.4 lakh to Rs. 6 lakh per annum; TDS on e-commerce transactions reduced from 1% to 0.1%; Sections 206AB and 206CCA (higher TDS/TCS for non-filers) omitted; Form 15G and 15H merged into Form 121 under IT Act 2025.
+
+Q: What is the surcharge on income tax?
+A: Surcharge is an additional tax on income tax for high-income earners. Under the new tax regime, the maximum surcharge is capped at 25% (for income above Rs. 5 crore). Under the old regime, it can go up to 37% for income above Rs. 5 crore. Health and Education Cess of 4% applies on tax plus surcharge.
+
+Q: Is there any tax benefit on NPS contributions?
+A: Yes. Employer contributions to NPS are deductible up to 14% of basic salary under the new tax regime (Section 80CCD(2)). An employee's own contribution to NPS is deductible up to 10% of salary (old regime only, within Rs. 1.5 lakh limit). An additional Rs. 50,000 deduction on own NPS contribution is available under Section 80CCD(1B) exclusively under the old tax regime.
+
+
+END OF DOCUMENT
+Total sections: 24 | Total topics: 90+
+Best used for: RAG (Retrieval-Augmented Generation), semantic search, fine-tuning, embedding-based Q&A chatbots on Indian taxation
+Recommended chunking: By TOPIC label (each TOPIC block is a semantically complete chunk ideal for embedding)
+Last updated: April 2026
+
