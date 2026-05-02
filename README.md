@@ -20,12 +20,11 @@
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_DB-FF6B35?style=for-the-badge)](https://www.trychroma.com)
 [![Groq](https://img.shields.io/badge/Groq-LLM_Engine-F55036?style=for-the-badge)](https://groq.com)
 [![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML_Classifier-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![Status](https://img.shields.io/badge/Status-Active-22C55E?style=for-the-badge)](.)
 
 <br/>
 
-> **RAG from Scratch · ML Intent Classifier · Document Intelligence · Voice AI · Multilingual · OAuth 2.0**
+> **RAG from Scratch · Document Intelligence · Voice AI · Multilingual · OAuth 2.0**
 
 </div>
 
@@ -38,7 +37,6 @@ FinSavvy AI is a full-stack AI financial assistant that behaves like a **Charter
 Unlike plug-and-play LLM wrappers, this system is engineered from first principles:
 
 - ✅ **Custom RAG pipeline** — chunking, embedding, retrieval, and prompt engineering written manually, zero LangChain dependency
-- ✅ **ML-powered query routing** — trained intent classifier intelligently routes each query to the correct knowledge source, eliminating irrelevant retrieval
 - ✅ **Multi-modal input** — text, voice, PDFs, scanned images via OCR
 - ✅ **Source attribution** — every answer cites the exact document it pulled from
 - ✅ **Persistent memory** — conversation context preserved across sessions
@@ -60,13 +58,6 @@ Unlike plug-and-play LLM wrappers, this system is engineered from first principl
 │          STT (Speech-to-Text)  ·  OCR  ·  PDF Parser            │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                  ML INTENT CLASSIFIER  ← NEW                     │
-│         TF-IDF + Logistic Regression · 91% F1 · 5 Classes       │
-│   tax · document · general_finance · memory · mixed              │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │
               ┌────────────┴────────────┐
               ▼                         ▼
 ┌─────────────────────┐    ┌───────────────────────┐
@@ -84,7 +75,7 @@ Unlike plug-and-play LLM wrappers, this system is engineered from first principl
                            ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    VECTOR SEARCH — ChromaDB                      │
-│         Similarity Retrieval · Relevance Filter · Routed         │
+│              Similarity Retrieval · Relevance Filter             │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
                            ▼
@@ -98,118 +89,6 @@ Unlike plug-and-play LLM wrappers, this system is engineered from first principl
 │                     GROQ LLM INFERENCE                           │
 │                  Response + Source Attribution                   │
 └─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 🤖 ML Intent Classifier — Query Routing Engine
-
-> The core ML upgrade that separates FinSavvy from a generic RAG chatbot.
-
-### The Problem It Solved
-
-The original system searched **all 4 knowledge sources** for every single query — CA books, uploaded documents, TXT knowledge base, and chat memory — regardless of what the user actually asked.
-
-This caused three problems:
-
-- Irrelevant context chunks being passed to the LLM
-- Noisy, less accurate responses from conflicting sources
-- Unnecessary embedding lookups on every query
-
-### The Solution
-
-A **TF-IDF + Logistic Regression classifier** trained on 195 labeled financial queries. It detects the user's intent before any retrieval happens — and activates only the sources that are actually relevant.
-
-```
-User Query
-    ↓
-Intent Classifier  (TF-IDF + Logistic Regression)
-    ↓
-Intent: "tax"  →  Search CA Books only
-Intent: "document"  →  Search User Documents only
-Intent: "general_finance"  →  Search TXT Knowledge only
-Intent: "memory"  →  Search Chat Memory only
-Intent: "mixed"  →  Search CA Books + Documents + TXT
-```
-
-### Intent Labels & Source Routing
-
-| Intent | Example Queries | Sources Activated |
-|---|---|---|
-| `tax` | "What is Section 80C?", "How to file ITR?" | CA Books only |
-| `document` | "Read my uploaded PDF", "What does my salary slip say?" | User Documents only |
-| `general_finance` | "How does SIP work?", "What is CIBIL score?" | TXT Knowledge only |
-| `memory` | "What did I ask earlier?", "Repeat your last answer" | Chat Memory only |
-| `mixed` | "From my salary slip calculate my tax under 80C" | CA Books + Documents + TXT |
-
-### Training Details
-
-| Parameter | Value |
-|---|---|
-| Algorithm | Logistic Regression |
-| Vectorizer | TF-IDF (ngram range 1-2) |
-| Training examples | 195 labeled queries |
-| Classes | 5 (tax, document, general_finance, memory, mixed) |
-| Tuning method | GridSearchCV (144 candidates, 5-fold CV) |
-| Best F1 Score | **0.9126 weighted** |
-| Low confidence fallback | Routes to `mixed` if confidence < 0.45 |
-
-### Hyperparameter Tuning — GridSearchCV Output
-
-> `python classifier.py tune` — 144 parameter combinations tested across 5-fold cross validation
-
-<!-- ADD SCREENSHOT: python classifier.py tune terminal output showing best params + F1 score + classification report -->
-![Hyperparameter Tuning Output](screenshots/classifier_tune.png)
-
-**Best Parameters Found:**
-```python
-{
-  'clf__C': 5.0,
-  'clf__class_weight': None,
-  'tfidf__max_features': 3000,
-  'tfidf__ngram_range': (1, 2),
-  'tfidf__sublinear_tf': False
-}
-
-Best F1 Score: 0.9126
-```
-
-### Classifier Confidence Scores — Before vs After Tuning
-
-> `python classifier.py` — live confidence scores across all 5 intent classes
-
-<!-- ADD SCREENSHOT: python classifier.py output showing confidence scores -->
-![Classifier Confidence Scores](screenshots/classifier_test.png)
-
-| Query | Intent | Before Tuning | After Tuning |
-|---|---|---|---|
-| "What is Section 80C?" | tax | 0.69 | **0.85** |
-| "Summarize my uploaded salary slip" | document | 0.65 | **0.74** |
-| "How does SIP work?" | general_finance | 0.78 | **0.85** |
-| "What did I ask earlier?" | memory | 0.80 | **0.80** |
-| "Using my form 16 calculate my tax" | mixed | 0.59 | **0.76** |
-
-### Live Routing in Action
-
-> Intent classifier running inside FastAPI — real-time terminal output during a user query
-
-<!-- ADD SCREENSHOT: live terminal showing classifier routing inside main.py -->
-![Live Intent Routing](screenshots/classifier_live.png)
-
-```
-User message: What is Section 80C?
-[Classifier] Query: 'What is Section 80C?...' → Intent: tax (confidence: 0.85)
-
-===== INTENT CLASSIFIER =====
-Intent: tax
-Active Sources: ['ca_books']
-=============================
-
-===== DEBUG: CA BOOKS =====
-CA Chunk 1: Section 80C allows deductions up to ₹1.5 lakh...
-=================================
-
-Source: CA Notes
 ```
 
 ---
@@ -251,6 +130,7 @@ Switch languages mid-conversation. Designed for India's linguistically diverse u
 
 ![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433)
 
+
 ### 🔐 Authentication
 | Method | Provider |
 |---|---|
@@ -264,7 +144,6 @@ Switch languages mid-conversation. Designed for India's linguistically diverse u
 | Layer | Technology | Role |
 |---|---|---|
 | **Backend** | FastAPI | REST API, routing, session management |
-| **ML Classifier** | scikit-learn | Intent classification + query routing |
 | **Frontend** | HTML / CSS / JS | UI, voice controls, file upload |
 | **LLM** | Groq API | Fast inference (LLaMA-based) |
 | **Vector DB** | ChromaDB | Embedding storage + semantic retrieval |
@@ -283,9 +162,12 @@ FinSavvy-AI/
 ├── backend/
 │   ├── main.py              # FastAPI app entry point
 │   ├── auth.py              # OAuth + session auth logic
-│   ├── classifier.py        # ML intent classifier (TF-IDF + LR)
-│   ├── memory.py            # ChromaDB collections + retrieval
 │   ├── database.py          # SQLite models + CRUD
+│   ├── rag/
+│   │   ├── chunker.py       # Custom text chunking
+│   │   ├── embedder.py      # Embedding generation
+│   │   ├── retriever.py     # ChromaDB vector search
+│   │   └── prompt.py        # Context injection + prompt builder
 │   └── utils/
 │       ├── ocr.py           # Tesseract OCR pipeline
 │       ├── pdf_parser.py    # PyMuPDF extraction
@@ -386,10 +268,6 @@ http://localhost:8000
 |---|---|
 | ![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) | ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) |
 
-| Intent Classifier — Tuning Output | Intent Classifier — Live Routing |
-|---|---|
-| <!-- ADD: classifier_tune.png --> | <!-- ADD: classifier_live.png --> |
-
 ---
 
 ## Why Build RAG from Scratch?
@@ -408,12 +286,6 @@ This is the engineering difference between a project and a system.
 
 ## Roadmap
 
-- [x] Custom RAG pipeline from scratch
-- [x] Multi-source knowledge ingestion (CA Books + TXT + User Docs)
-- [x] OCR + PDF document intelligence
-- [x] OAuth 2.0 authentication (Google, GitHub, LinkedIn)
-- [x] Multilingual support
-- [x] **ML intent classifier for intelligent query routing (91% F1)**
 - [ ] Financial analytics dashboard (spending trends, tax estimation)
 - [ ] AWS deployment (EC2 + Elastic Beanstalk)
 - [ ] SageMaker integration for fine-tuned financial models
