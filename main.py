@@ -18,6 +18,7 @@ import fitz
 import pytesseract
 from PIL import Image
 import io
+from classifier import classify_intent, get_sources_for_intent
 from memory import search_ca_books
 from memory import search_txt_knowledge
 from memory import (
@@ -405,60 +406,73 @@ async def chat_api(
     # ---------------- CONTEXT BUILDING ----------------
     context_parts = []
     source_used = []
-
+ 
     print("User message:", user_message)
-
+ 
     if user_message:
-
-        # 🔹 1. SEARCH USER DOCUMENTS
-        doc_results = search_documents(user_message, session_id)
-
-        print("\n===== DEBUG: RETRIEVED DOCS =====")
-        for i, doc in enumerate(doc_results):
-            print(f"\nChunk {i+1}:\n{doc[:200]}...")
-        print("=================================\n")
-
-        # 🔹 2. SEARCH CA BOOKS (NEW)
-        ca_results = search_ca_books(user_message)
-
-        print("\n===== DEBUG: CA BOOKS =====")
-        for i, doc in enumerate(ca_results):
-            print(f"\nCA Chunk {i+1}:\n{doc[:200]}...")
-        print("=================================\n")
-
-        # 🔹 3. DOCUMENT CONTEXT
-        if doc_results:
-            context_parts.append(
-                "DOCUMENT CONTEXT:\n" + "\n\n".join(doc_results[:2])
-            )
-            source_used.append("User Document")
-
-        # 🔹 4. CA KNOWLEDGE (IMPORTANT)
-        if ca_results:
-            context_parts.append(
-                "CA KNOWLEDGE:\n" + "\n\n".join(ca_results[:2])
-            )
-            source_used.append("CA Notes")
-
-        # 🔹 5. CHAT MEMORY
+ 
+        # STEP 1: Classify intent
+        intent = classify_intent(user_message)
+        active_sources = get_sources_for_intent(intent)
+ 
+        print(f"\n===== INTENT CLASSIFIER =====")
+        print(f"Intent: {intent}")
+        print(f"Active Sources: {active_sources}")
+        print(f"=============================\n")
+ 
+        # STEP 2: Conditionally search only relevant sources
+ 
+        # USER DOCUMENTS — only if intent is document or mixed
+        if "documents" in active_sources:
+            doc_results = search_documents(user_message, session_id)
+ 
+            print("\n===== DEBUG: RETRIEVED DOCS =====")
+            for i, doc in enumerate(doc_results):
+                print(f"\nChunk {i+1}:\n{doc[:200]}...")
+            print("=================================\n")
+ 
+            if doc_results:
+                context_parts.append(
+                    "DOCUMENT CONTEXT:\n" + "\n\n".join(doc_results[:2])
+                )
+                source_used.append("User Document")
+ 
+        # CA BOOKS — only if intent is tax or mixed
+        if "ca_books" in active_sources:
+            ca_results = search_ca_books(user_message)
+ 
+            print("\n===== DEBUG: CA BOOKS =====")
+            for i, doc in enumerate(ca_results):
+                print(f"\nCA Chunk {i+1}:\n{doc[:200]}...")
+            print("=================================\n")
+ 
+            if ca_results:
+                context_parts.append(
+                    "CA KNOWLEDGE:\n" + "\n\n".join(ca_results[:2])
+                )
+                source_used.append("CA Notes")
+ 
+        # TXT KNOWLEDGE — only if intent is general_finance or mixed
+        if "txt_knowledge" in active_sources:
+            txt_results = search_txt_knowledge(user_message)
+ 
+            print("\n===== DEBUG: TXT RESULTS =====")
+            for i, doc in enumerate(txt_results):
+                print(f"\nTXT Chunk {i+1}:\n{doc[:200]}...")
+            print("=================================\n")
+ 
+            if txt_results:
+                context_parts.append(
+                    "TXT KNOWLEDGE:\n" + "\n\n".join(txt_results[:3])
+                )
+                source_used.append("Data Ingestion Txt")
+ 
+        # CHAT MEMORY — always retrieve (lightweight, needed for continuity)
         chat_memory = retrieve_memory(user_message, session_id)
         if chat_memory:
             context_parts.append(
                 "CHAT HISTORY:\n" + "\n".join(chat_memory[:5])
             )
-        # 🔹 TXT KNOWLEDGE
-        txt_results = search_txt_knowledge(user_message)
-
-        print("\n===== DEBUG: TXT RESULTS =====")
-        for i, doc in enumerate(txt_results):
-            print(f"\nTXT Chunk {i+1}:\n{doc[:200]}...")
-        print("=================================\n")
-
-        if txt_results:
-            context_parts.append(
-                "TXT KNOWLEDGE:\n" + "\n\n".join(txt_results[:3])
-            )
-            source_used.append("Data Ingestion Txt")
     context = "\n\n".join(context_parts)
     source_used = list(set(source_used))
 
