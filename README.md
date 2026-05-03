@@ -20,11 +20,12 @@
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_DB-FF6B35?style=for-the-badge)](https://www.trychroma.com)
 [![Groq](https://img.shields.io/badge/Groq-LLM_Engine-F55036?style=for-the-badge)](https://groq.com)
 [![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Classifier-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![Status](https://img.shields.io/badge/Status-Active-22C55E?style=for-the-badge)](.)
 
 <br/>
 
-> **RAG from Scratch · Document Intelligence · Voice AI · Multilingual · OAuth 2.0**
+> **RAG from Scratch · ML Intent Classifier · Document Intelligence · Voice AI · Multilingual · OAuth 2.0**
 
 </div>
 
@@ -40,6 +41,7 @@ Unlike plug-and-play LLM wrappers, this system is engineered from first principl
 - ✅ **Multi-modal input** — text, voice, PDFs, scanned images via OCR
 - ✅ **Source attribution** — every answer cites the exact document it pulled from
 - ✅ **Persistent memory** — conversation context preserved across sessions
+- ✅ **ML Intent Classifier** — TF-IDF + Logistic Regression routes queries to the right source (tax → CA books, doc → uploaded files, finance → knowledge base)
 - ✅ **Secure auth** — Google, GitHub, and LinkedIn OAuth integration
 
 ---
@@ -74,8 +76,17 @@ Unlike plug-and-play LLM wrappers, this system is engineered from first principl
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────────────┐
+│               ML INTENT CLASSIFIER (NEW)                         │
+│   TF-IDF + Logistic Regression · GridSearchCV tuned             │
+│   tax → ca_books  |  document → uploaded_docs                   │
+│   general_finance → txt_knowledge  |  memory → chat_history     │
+│   mixed → all sources  |  confidence < 0.45 → fallback          │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
 │                    VECTOR SEARCH — ChromaDB                      │
-│              Similarity Retrieval · Relevance Filter             │
+│         Targeted Retrieval · Only Relevant Sources Queried       │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
                            ▼
@@ -102,9 +113,36 @@ The retrieval pipeline is built entirely from scratch. Manual chunking strategie
 No LangChain. No LlamaIndex. Just clean, auditable Python.
 ```
 
-**Live retrieval in action** — terminal output showing real-time vector distance scores and threshold-based filtering during a query:
+**Live retrieval in action** — terminal output showing real-time vector distance scores, threshold-based filtering, and the intent classifier routing to only the relevant ChromaDB source:
 
-![Multilingual Chat — Hindi](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2)
+![RAG Terminal — Intent Classifier + Distance Scores + Source Routing](https://github.com/user-attachments/assets/b1818cfd-5f0a-41ea-a4d4-c3b5f146cd2f)
+
+---
+
+### 🤖 ML Intent Classifier — Smart Source Routing
+The biggest upgrade to FinSavvy AI's RAG pipeline. Instead of querying all ChromaDB sources for every message (slow, noisy, expensive), a trained **TF-IDF + Logistic Regression classifier** first identifies the query intent and routes it to only the relevant source.
+
+| Intent | Sources Queried | Example Query |
+|---|---|---|
+| `tax` | CA Books only | "What is Section 80C?" |
+| `document` | Uploaded docs only | "Summarize my salary slip" |
+| `general_finance` | TXT Knowledge only | "How does SIP work?" |
+| `memory` | Chat history only | "What did I ask earlier?" |
+| `mixed` | All sources | "From my Form 16 calculate my tax" |
+
+**Confidence threshold:** If classifier confidence < 0.45 → falls back to `mixed` (all sources) to avoid wrong routing.
+
+**Training data:** 170+ labeled query-intent pairs across 5 classes, tuned via GridSearchCV across TF-IDF ngram range, max features, sublinear TF, regularization C, and class weight.
+
+#### Classifier Training Output
+Classification report showing per-class precision, recall and F1 — confirming the model generalizes across all 5 intent classes:
+
+![Classifier Training — Classification Report](https://github.com/user-attachments/assets/97915286-26c0-4a80-8fa1-a26d194cb0bb)
+
+#### GridSearchCV Hyperparameter Tuning
+Best parameters found across 5-fold cross validation on `f1_weighted` scoring:
+
+![GridSearchCV Hyperparameter Tuning Output](https://github.com/user-attachments/assets/906ca49f-2e31-4a53-89cc-e1c5ad8ad2d2)
 
 ### 📄 Document Intelligence
 Upload a PDF, image, or scanned document. The system extracts text (via PyMuPDF + Tesseract OCR), chunks it, embeds it, and immediately makes it queryable. Your uploaded documents become part of the knowledge base.
@@ -128,8 +166,7 @@ Each conversation retains history. AI-generated titles label your sessions. Mult
 ### 🌍 Multilingual
 Switch languages mid-conversation. Designed for India's linguistically diverse user base.
 
-![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433)
-
+![Multilingual Chat — Hindi](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2)
 
 ### 🔐 Authentication
 | Method | Provider |
@@ -150,6 +187,8 @@ Switch languages mid-conversation. Designed for India's linguistically diverse u
 | **Database** | SQLite | Users, sessions, chat history |
 | **OCR** | Tesseract | Scanned document text extraction |
 | **PDF Parser** | PyMuPDF | Structured PDF text extraction |
+| **Classifier** | Scikit-Learn | TF-IDF + Logistic Regression intent routing |
+| **Tuning** | GridSearchCV | Hyperparameter optimization (5-fold CV) |
 | **Auth** | Authlib | OAuth 2.0 integration |
 
 ---
@@ -161,6 +200,7 @@ FinSavvy-AI/
 │
 ├── backend/
 │   ├── main.py              # FastAPI app entry point
+│   ├── classifier.py        # TF-IDF + LR intent classifier + GridSearchCV tuning
 │   ├── auth.py              # OAuth + session auth logic
 │   ├── database.py          # SQLite models + CRUD
 │   ├── rag/
@@ -260,13 +300,13 @@ http://localhost:8000
 
 ## Screenshots
 
-| Chat Interface | Authentication | Document Upload |
+| Chat Interface | Document Upload | Voice Mode |
 |---|---|---|
-| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | <img width="1917" height="912" alt="Screenshot 2026-04-23 212554" src="https://github.com/user-attachments/assets/42a69ce3-2f1e-4174-bc3b-abb0fab4dc81" /> | <img width="1918" height="907" alt="Screenshot 2026-04-23 212801" src="https://github.com/user-attachments/assets/ae92ff2e-5584-4392-8bc4-3acdf34e16ab" /> |
+| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | ![UI 2](https://github.com/user-attachments/assets/bf4a2af9-c4ca-46a5-8fcb-aa6a69d99936) | ![UI 3](https://github.com/user-attachments/assets/e6493a85-cfc0-4585-8e54-6b2e4a40210a) |
 
 | Multilingual Support (Hindi) | RAG Terminal — Live Distance Scores |
 |---|---|
-| ![RAG Terminal — Distance Scores & Threshold Filtering](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) | ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) |
+| ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) | ![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) |
 
 ---
 
