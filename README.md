@@ -1,3 +1,4 @@
+<img width="1918" height="907" alt="Screenshot 2026-04-23 212801" src="https://github.com/user-attachments/assets/0da47ae3-83c1-4584-9006-a3bfef9bc8be" />
 # FinSavvy AI 🧾
 
 <div align="center">
@@ -302,7 +303,7 @@ http://localhost:8000
 
 | Chat Interface | Document Upload | Voice Mode |
 |---|---|---|
-| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | ![UI 2](https://github.com/user-attachments/assets/bf4a2af9-c4ca-46a5-8fcb-aa6a69d99936) | ![UI 3](https://github.com/user-attachments/assets/e6493a85-cfc0-4585-8e54-6b2e4a40210a) |
+| ![UI 1](https://github.com/user-attachments/assets/cfb50b27-5b5e-4206-b281-406cd5a02ab1) | <img width="1918" height="907" alt="Screenshot 2026-04-23 212801" src="https://github.com/user-attachments/assets/2621237d-1729-4b56-9de2-5a7786595252" /> | ![UI 3](https://github.com/user-attachments/assets/e6493a85-cfc0-4585-8e54-6b2e4a40210a) |
 
 | Multilingual Support (Hindi) | RAG Terminal — Live Distance Scores |
 |---|---|
