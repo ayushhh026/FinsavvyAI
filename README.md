@@ -166,7 +166,7 @@ Each conversation retains history. AI-generated titles label your sessions. Mult
 ### 🌍 Multilingual
 Switch languages mid-conversation. Designed for India's linguistically diverse user base.
 
-![Multilingual Chat — Hindi](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2)
+![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433)
 
 ### 🔐 Authentication
 | Method | Provider |
@@ -306,7 +306,7 @@ http://localhost:8000
 
 | Multilingual Support (Hindi) | RAG Terminal — Live Distance Scores |
 |---|---|
-| ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) | ![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) |
+| ![RAG Terminal](https://github.com/user-attachments/assets/0b6e6eec-0e37-41af-9244-87849a07f433) | ![Hindi Chat](https://github.com/user-attachments/assets/7ccdb9bc-195d-4f5d-a4f2-57b79a3b22d2) |
 
 ---
 
