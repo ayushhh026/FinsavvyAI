@@ -1,4 +1,3 @@
-<img width="1918" height="907" alt="Screenshot 2026-04-23 212801" src="https://github.com/user-attachments/assets/0da47ae3-83c1-4584-9006-a3bfef9bc8be" />
 # FinSavvy AI 🧾
 
 <div align="center">
